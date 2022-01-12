@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
     <title>Leah Character Sheet</title>
 </head>
 <body>
     <header>
         <h1>Leah</h1>
-        <h2>level 18: level 16 <a href="#">fighter</a> - level 2 <a href="#">barbarian</a></h2>
+        <h2>level 18 : level 16 <a href="#">fighter</a>-level 2 <a href="#">barbarian</a></h2>
     </header>
 
     <div class="health-stats">
@@ -37,17 +38,244 @@
     
     <main>
         <div id="left">
-            <div id="stats"></div>
-            <div id="skills"></div>
-            <div id="abilities">
-                <div id="fighter-leah"></div>
-                <div id="barbarian"></div>
-                <div id="shield"></div>
-            </div>
+            <table id="stats">
+            <tr><th colspan="5">Stats</th></tr>
+            <tr>
+                <th>Score</th>
+                <th>Skill</th>
+                <th>Mod</th>
+                <th>SP?</th>
+                <th>Save</th>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Strength</td>
+                <td>+2</td>
+                <td>y</td>
+                <td>+7</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Dexterity</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Constitution</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Intelligence</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Wisdom</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Charisma</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+            <table id="skills">
+                <th colspan="4">Skills</th>
+                <tr>
+                    <th>Prof</th>      
+                    <th>Exp</th>
+                    <th>Skill</th>
+                    <th>Mod</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Acrobatics</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Animal Handling</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Arcana</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Athletics</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Deception</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>History</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Insight</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Intimidation</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Investigation</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Medicine</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Nature</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Perception</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Performance</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Persuasion</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Religion</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Sleight of Hand</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Stealth</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Survival</td>
+                    <td></td>
+                </tr>
+
+            </table>
+            <table class="abilities" id="fighter-leah">
+                <tr>
+                    <th>Multiple Attack</th>
+                    <td>3 attacks per attack action</td>
+                </tr>
+                <tr>
+                    <th>Steady Shot</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Turncoat</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Second Wind</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Action Surge</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Indomitable</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Close-Quarters Shooter</th>
+                    <td></td>
+                </tr>
+            </table>
+            <table class="abilities" id="barbarian">
+                <tr>
+                    <th>Rage</th>
+                    <td>Can go into a rage twice every long rest </td>
+                </tr>
+                <tr>
+                    <th>Reckless Attack</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Danger Sense</th>
+                    <td></td>
+                </tr>
+            </table>
+            <table class="abilities" id="shield">
+                <tr>
+                    <th>Shield Master Feat</th>
+                    <th>Protection Fighter Style</th>
+                </tr>
+                <tr>
+                    <td>if you take an attack, you can use a bonus action to try to shove a creature within 5 feet of you with your shield. 
+                    If you aren't incapacitated, you can add your shield's AC bonus to any dex save you make against a spell or other harmful effect that targets only you. 
+                    If you are subjected to an effect that allows you to make a dex save to take only half damage, you can use your reaction to take no damage if you succeed on the save. </td>
+                    <td>when a creature you can see attacks a creature other than you within 5 feet, you can use your reaction to impose disadvantage on that attack roll</td>
+                </tr>
+            </table>
 
         </div>
         <div id="right">
-            <div id="guns"></div>
+            <div id="guns">
+                <div id="gun-stats">
+                    <div id="brute"></div>
+                    <div id="magic"></div>
+                </div>
+            <table id="bullets">
+            </table>
+
+            </div>
             <div id="weapons"></div>                            
             <div id="maneuvers"></div>
             <div id="profs"></div>
