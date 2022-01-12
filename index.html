@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700">
+    <script type="text/javascript" src="scripts.js" defer></script>
     <title>Leah Character Sheet</title>
     <meta name="author" content="Olivia Rudd">
 </head>
 <body>
     <header>
         <h1>LEAH</h1>
-        <h2>level 18 : level 16 <a href="http://dnd5e.wikidot.com/fighter">fighter</a>-level 2 <a href="http://116.203.203.11/dnd5e.wikidot.com/barbarian.html">barbarian</a></h2>
+        <h2>level 18 : level 16 <a href="http://dnd5e.wikidot.com/fighter">fighter</a> + level 2 <a href="http://116.203.203.11/dnd5e.wikidot.com/barbarian.html">barbarian</a></h2>
     </header>
 
     <table id="health-stats">
@@ -25,7 +26,7 @@
         </colgroup>
         <tr>
             <th>AC</th>
-            <th>HP</th>
+            <th>HP/161</th>
             <th>Speed</th>
             <th>Prof. Bonus</th>
             <th>Initiative</th>
@@ -33,16 +34,17 @@
             <th>Hit Dice</th>
         </tr>
         <tr>
-            <td>27</td>
-            <td>161</td>
-            <td>35</td>
-            <td>+6</td>
-            <td>+6</td>
+            <td id="shieldAc"></td>
+            <td id="hp">161</td>
+            <td id="baseSpeed">35</td>
+            <td id="profBonus">+6</td>
+            <td id="initBonus">+6</td>
             <td>S|</td>
-            <td>16d10|</td>
+            <!-- will need to deal with a checkbox system for death saves (and hit dice) later - maybe making each span two columns, so they can have a label and then a checkbox area (or "used" area respectively) -->
+            <td id="fighterHitDice">16d10|</td>
         </tr>
         <tr>
-            <td>23</td>
+            <td id="baseAc"></td>
             <td></td>
             <td></td>
             <td></td>
@@ -311,6 +313,7 @@
 
 </body>
 </html>
+
 
 <!-- NOTES
 - figure out a way to display more info if needed, less for simplicty - flip, hover tips, etc
