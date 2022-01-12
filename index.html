@@ -16,13 +16,13 @@
 
     <table id="health-stats">
         <colgroup>
-        <col id="ac">
-        <col id="hp">
-        <col id="speed">
-        <col id="pb">
-        <col id="init">
-        <col id="death">
-        <col id="hitd">
+        <col id="ac-col">
+        <col id="hp-col">
+        <col id="speed-col">
+        <col id="pb-col">
+        <col id="init-col">
+        <col id="death-col">
+        <col id="hitd-col">
         </colgroup>
         <tr>
             <th>AC</th>
@@ -34,17 +34,17 @@
             <th>Hit Dice</th>
         </tr>
         <tr>
-            <td id="shieldAc"></td>
-            <td id="hp">161</td>
-            <td id="baseSpeed">35</td>
-            <td id="profBonus">+6</td>
-            <td id="initBonus">+6</td>
+            <td class="shieldAc"></td>
+            <td class="hp">161</td>
+            <td class="baseSpeed">35</td>
+            <td class="pb"></td>
+            <td class="initBonus">+6</td>
             <td>S|</td>
             <!-- will need to deal with a checkbox system for death saves (and hit dice) later - maybe making each span two columns, so they can have a label and then a checkbox area (or "used" area respectively) -->
-            <td id="fighterHitDice">16d10|</td>
+            <td class="fighterHitDice">16d10|</td>
         </tr>
         <tr>
-            <td id="baseAc"></td>
+            <td class="baseAc"></td>
             <td></td>
             <td></td>
             <td></td>
@@ -113,115 +113,96 @@
             <table id="skills">
                 <th colspan="4">Skills</th>
                 <tr>
-                    <th>Prof</th>      
-                    <th>Exp</th>
+                    <th>Prof/Exp</th>
                     <th>Skill</th>
                     <th>Mod</th>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td>Acrobatics</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>Animal Handling</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td>Arcana</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>Athletics</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td>Deception</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>History</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td>Insight</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>Intimidation</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td>Investigation</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>Medicine</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td>Nature</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>Perception</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td>Performance</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>Persuasion</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td>Religion</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>Sleight of Hand</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
                     <td>Stealth</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td>Survival</td>
                     <td></td>
@@ -240,48 +221,66 @@
     </div>
             
     <div id="abilities-and-profs">
-        <table class="abilities" id="fighter-leah">
+        <table class="abilities">
             <tr>
                 <th>Multiple Attack</th>
+                <td></td>
                 <td>3 attacks per attack action</td>
             </tr>
             <tr>
                 <th>Steady Shot</th>
                 <td></td>
+                <td>spend a full action to take one shot with an additional +PB<span class="pb"></span></td>
             </tr>
             <tr>
                 <th>Turncoat</th>
                 <td></td>
+                <td>if the target is surprised, any hit is auto-crit with max damage</td>
             </tr>
             <tr>
                 <th>Second Wind</th>
-                <td></td>
+                <td><span class="usedBox"></span></td>
+                <td>use BA for HP=1d10 + <span class="fighterLevel"></span> (replenishes after S/L rest)</td>
             </tr>
             <tr>
                 <th>Action Surge</th>
-                <td></td>
+                <td><span class="usedBox"></span></td>
+                <td>can take one full extra action (replenishes after S/L rest)</td>
             </tr>
             <tr>
                 <th>Indomitable</th>
-                <td></td>
+                <td><span class="usedBox"></span><span class="usedBox"></span</td>
+                <td>reroll failed saving throw </td>
             </tr>
             <tr>
                 <th>Close-Quarters Shooter</th>
                 <td></td>
+                <td>no disadvantage on melee range, ignore ½ and ¾ cover for targets within 30 ft</td>
             </tr>
         </table>
         <table class="abilities" id="barbarian">
             <tr>
                 <th>Rage</th>
-                <td>Can go into a rage twice every long rest </td>
+                <td><span class="usedBox"> <span class="usedBox"></span></td>
+                <td>Can go into a rage twice every long rest 
+                    rage as BA 
+                    <ul>
+                        <li>adv. on str checks and saves</li>
+                        <li>resist. to physical damage</li>
+                        <li>add +2 to str weapon attack and damage</li>
+                        <!-- this will be redundant because it will be automated eventually! -->
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <th>Reckless Attack</th>
                 <td></td>
+                <td> you have advantage on melee attack rolls that use strength, but all attack rolls against you have advantage until your next turn </td>
             </tr>
             <tr>
                 <th>Danger Sense</th>
                 <td></td>
+                <td>you always have advantage on dex saves against effects you can see</td>
             </tr>
         </table>
         <table class="abilities" id="shield">
@@ -290,9 +289,9 @@
                 <th>Protection Fighter Style</th>
             </tr>
             <tr>
-                <td>if you take an attack, you can use a bonus action to try to shove a creature within 5 feet of you with your shield.
-                If you aren't incapacitated, you can add your shield's AC bonus to any dex save you make against a spell or other harmful effect that targets only you.
-                If you are subjected to an effect that allows you to make a dex save to take only half damage, you can use your reaction to take no damage if you succeed on the save. </td>
+                <td>if you take an attack, you can use BA to try to shove a creature within 5 feet of you with your shield.
+                If you aren't incapacitated, you can add your shield's AC bonus (<span class="shieldAc"></span>) to any dex save you make against a spell or other harmful effect that targets only you.
+                If you are subjected to an effect that allows you to make a dex save to take only half damage, you can use your reaction to take no damage if you succeed on the save.
                 <td>when a creature you can see attacks a creature other than you within 5 feet, you can use your reaction to impose disadvantage on that attack roll</td>
             </tr>
         </table>

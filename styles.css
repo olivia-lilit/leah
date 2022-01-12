@@ -6,6 +6,7 @@
     min-height: 20px; */
     font-family: "Josefin Sans", sans-serif;
     --accent-color: rgb(166, 185, 247);
+    /* text-transform: lowercase; */
 
 }
 
@@ -23,24 +24,30 @@ header {
     justify-content: space-evenly;
     padding: 20px;
 }
+
 h1,h2 {
     margin:0;
     padding: 0;
+    text-transform: none;
+
 }
-hr {
-border: 1px solid black;
+
+h1 {
+margin-bottom: 8px;
 }
 
 a {
     padding: 0;
     margin: 0;
-    text-decoration: none;
+    text-decoration: var(--accent-color, blue) wavy underline 1.5px;
+    text-underline-offset: 6px;
     color: inherit;
 }
 
 a:hover {
     color: blue;
     color: var(--accent-color, blue);
+    text-decoration: black wavy underline 1.5px;
 }
 
 #health-stats {
@@ -65,4 +72,19 @@ table#health-stats td {
 
 #gun-stats {
 display: flex;
+}
+
+#abilities-and-profs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+#abilities-and-profs>* {
+    min-width: 100px;
+    max-width: 600px;
+    margin: 10px;
+
 }
