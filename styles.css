@@ -1,21 +1,34 @@
 * {
-    border: 1px solid black;
-    margin: 10px;
+    border: 1px solid black; 
+    /* margin: 10px;
     background-color: rgba(100, 117, 0, 0.1);
     min-width: 20px;
-    min-height: 20px;
+    min-height: 20px; */
+    font-family: "Josefin Sans", sans-serif;
+    --accent-color: rgb(166, 185, 247);
+
 }
 
 body {
     padding: 0;
     display: flex;
     flex-direction: column;
+
 }
 
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+h1,h2 {
+    margin:0;
+    padding: 0;
+}
+hr {
+border: 1px solid black;
 }
 
 a {
@@ -25,21 +38,31 @@ a {
     color: inherit;
 }
 
-.health-stats {
-    display: flex;
+a:hover {
+    color: blue;
+    color: var(--accent-color, blue);
 }
 
-main {
+#health-stats {
+    border: 2px solid black;
+}
+col {
+    width: 10vw;
+}
+table#health-stats td {
+    text-align: center;
+}
+
+#stats-and-weapons {
     display: flex;
 }
 
 #left, #right {
     flex: 1 1 auto;
-    min-width: 20vw;
     display: flex;
     flex-direction: column;
 }
 
-table {
-
+#gun-stats {
+display: flex;
 }
