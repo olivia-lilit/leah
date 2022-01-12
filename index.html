@@ -3,40 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700">
     <title>Leah Character Sheet</title>
+    <meta name="author" content="Olivia Rudd">
 </head>
 <body>
     <header>
-        <h1>Leah</h1>
-        <h2>level 18 : level 16 <a href="#">fighter</a>-level 2 <a href="#">barbarian</a></h2>
+        <h1>LEAH</h1>
+        <h2>level 18 : level 16 <a href="http://dnd5e.wikidot.com/fighter">fighter</a>-level 2 <a href="http://116.203.203.11/dnd5e.wikidot.com/barbarian.html">barbarian</a></h2>
     </header>
 
-    <div class="health-stats">
-        <div id="ac">
-            <div class="+shield">25</div>
-            <div class="base">21</div>
-        </div>
-        <div id="hp">
-            <div>full</div>
-            <div>input damage/healing</div>
-            <div>current</div>
-            <!-- temp hit points involved-->
-        </div>
-        <div id="speed"> 35
-        </div>
-        <div id="pb">+5</div>
-        <div id="init">+6</div>
-        <div id="death">death saves
-            <div class="success"></div>
-            <div class="failure"></div>
-        </div>
-        <div id="hitd">hit dice
-            <div">12d10 + 2d12</div>
-            <div>used: </div>
-        </div>
-    </div>
+    <table id="health-stats">
+        <colgroup>
+        <col id="ac">
+        <col id="hp">
+        <col id="speed">
+        <col id="pb">
+        <col id="init">
+        <col id="death">
+        <col id="hitd">
+        </colgroup>
+        <tr>
+            <th>AC</th>
+            <th>HP</th>
+            <th>Speed</th>
+            <th>Prof. Bonus</th>
+            <th>Initiative</th>
+            <th>Death Saves</th>
+            <th>Hit Dice</th>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>161</td>
+            <td>35</td>
+            <td>+6</td>
+            <td>+6</td>
+            <td>S|</td>
+            <td>16d10|</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>F|</td>
+            <td>2d12|</td>
+        </tr>
+
+
+    </table>
     
-    <main>
+    <div id="stats-and-weapons">
         <div id="left">
             <table id="stats">
             <tr><th colspan="5">Stats</th></tr>
@@ -52,42 +70,42 @@
                 <td>Strength</td>
                 <td>+2</td>
                 <td>y</td>
-                <td>+7</td>
+                <td>+8</td>
             </tr>
             <tr>
-                <td></td>
+                <td>22</td>
                 <td>Dexterity</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>+6</td>
+                <td>n</td>
+                <td>+6</td>
             </tr>
             <tr>
-                <td></td>
+                <td>14</td>
                 <td>Constitution</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>+2</td>
+                <td>y</td>
+                <td>+8</td>
             </tr>
             <tr>
-                <td></td>
+                <td>11</td>
                 <td>Intelligence</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>0</td>
+                <td>n</td>
+                <td>0</td>
             </tr>
             <tr>
-                <td></td>
+                <td>12</td>
                 <td>Wisdom</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>+1</td>
+                <td>n</td>
+                <td>+1</td>
             </tr>
             <tr>
-                <td></td>
+                <td>12</td>
                 <td>Charisma</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>+1</td>
+                <td>n</td>
+                <td>+1</td>
             </tr>
             </table>
             <table id="skills">
@@ -208,80 +226,79 @@
                 </tr>
 
             </table>
-            <table class="abilities" id="fighter-leah">
-                <tr>
-                    <th>Multiple Attack</th>
-                    <td>3 attacks per attack action</td>
-                </tr>
-                <tr>
-                    <th>Steady Shot</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Turncoat</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Second Wind</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Action Surge</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Indomitable</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Close-Quarters Shooter</th>
-                    <td></td>
-                </tr>
-            </table>
-            <table class="abilities" id="barbarian">
-                <tr>
-                    <th>Rage</th>
-                    <td>Can go into a rage twice every long rest </td>
-                </tr>
-                <tr>
-                    <th>Reckless Attack</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Danger Sense</th>
-                    <td></td>
-                </tr>
-            </table>
-            <table class="abilities" id="shield">
-                <tr>
-                    <th>Shield Master Feat</th>
-                    <th>Protection Fighter Style</th>
-                </tr>
-                <tr>
-                    <td>if you take an attack, you can use a bonus action to try to shove a creature within 5 feet of you with your shield. 
-                    If you aren't incapacitated, you can add your shield's AC bonus to any dex save you make against a spell or other harmful effect that targets only you. 
-                    If you are subjected to an effect that allows you to make a dex save to take only half damage, you can use your reaction to take no damage if you succeed on the save. </td>
-                    <td>when a creature you can see attacks a creature other than you within 5 feet, you can use your reaction to impose disadvantage on that attack roll</td>
-                </tr>
-            </table>
-
         </div>
+
         <div id="right">
-            <div id="guns">
-                <div id="gun-stats">
-                    <div id="brute"></div>
-                    <div id="magic"></div>
+                <div id="guns"> guns
+                <table id="bullets">
+                </table> bullets
                 </div>
-            <table id="bullets">
-            </table>
-
+                <div id="weapons">weapons</div>
             </div>
-            <div id="weapons"></div>                            
-            <div id="maneuvers"></div>
-            <div id="profs"></div>
-            <div id="inventory"></div>
-        </div>
-    </main>
+    </div>
+            
+    <div id="abilities-and-profs">
+        <table class="abilities" id="fighter-leah">
+            <tr>
+                <th>Multiple Attack</th>
+                <td>3 attacks per attack action</td>
+            </tr>
+            <tr>
+                <th>Steady Shot</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Turncoat</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Second Wind</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Action Surge</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Indomitable</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Close-Quarters Shooter</th>
+                <td></td>
+            </tr>
+        </table>
+        <table class="abilities" id="barbarian">
+            <tr>
+                <th>Rage</th>
+                <td>Can go into a rage twice every long rest </td>
+            </tr>
+            <tr>
+                <th>Reckless Attack</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Danger Sense</th>
+                <td></td>
+            </tr>
+        </table>
+        <table class="abilities" id="shield">
+            <tr>
+                <th>Shield Master Feat</th>
+                <th>Protection Fighter Style</th>
+            </tr>
+            <tr>
+                <td>if you take an attack, you can use a bonus action to try to shove a creature within 5 feet of you with your shield.
+                If you aren't incapacitated, you can add your shield's AC bonus to any dex save you make against a spell or other harmful effect that targets only you.
+                If you are subjected to an effect that allows you to make a dex save to take only half damage, you can use your reaction to take no damage if you succeed on the save. </td>
+                <td>when a creature you can see attacks a creature other than you within 5 feet, you can use your reaction to impose disadvantage on that attack roll</td>
+            </tr>
+        </table>
+        <div id="maneuvers">maneuvers</div>
+        <div id="profs">proficiencies</div>
+    </div>
+
+    <div id="inventory">inventory</div>
 
     <div id="status-effect">
         <div>haste</div>
@@ -290,7 +307,7 @@
         <div>exhaustion</div>
     </div>
 
-    <footer> <!-- icon attribution !--> </footer>
+    <footer>icon attribution </footer>
 
 </body>
 </html>
@@ -304,3 +321,4 @@
 - long rest (wipe slate clean except for decrease exhaustion by one) button
 - feels like there's gotta be a better way to include numbers that I'm gonna use and do math with javascript on.....
 -->
+
