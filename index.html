@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leah Character Sheet</title>
+</head>
+<body>
+    <header>
+        <h1>Leah</h1>
+        <h2>level 18: level 16 <a href="#">fighter</a> - level 2 <a href="#">barbarian</a></h2>
+    </header>
+
+    <div class="health-stats">
+        <div id="ac">
+            <div class="+shield">25</div>
+            <div class="base">21</div>
+        </div>
+        <div id="hp">
+            <div>full</div>
+            <div>input damage/healing</div>
+            <div>current</div>
+            <!-- temp hit points involved-->
+        </div>
+        <div id="speed"> 35
+        </div>
+        <div id="pb">+5</div>
+        <div id="init">+6</div>
+        <div id="death">death saves
+            <div class="success"></div>
+            <div class="failure"></div>
+        </div>
+        <div id="hitd">hit dice
+            <div">12d10 + 2d12</div>
+            <div>used: </div>
+        </div>
+    </div>
+    
+    <main>
+        <div id="left">
+            <div id="stats"></div>
+            <div id="skills"></div>
+            <div id="abilities">
+                <div id="fighter-leah"></div>
+                <div id="barbarian"></div>
+                <div id="shield"></div>
+            </div>
+
+        </div>
+        <div id="right">
+            <div id="guns"></div>
+            <div id="weapons"></div>                            
+            <div id="maneuvers"></div>
+            <div id="profs"></div>
+            <div id="inventory"></div>
+        </div>
+    </main>
+
+    <div id="status-effect">
+        <div>haste</div>
+        <div>slow</div>
+        <div>inspiration</div>
+        <div>exhaustion</div>
+    </div>
+
+    <footer> <!-- icon attribution !--> </footer>
+
+</body>
+</html>
+
+<!-- NOTES
+- figure out a way to display more info if needed, less for simplicty - flip, hover tips, etc
+- ultimately should calculate skill bonuses by stats
+- should be able to update all relevant #s when things are toggled like haste, rage, etc
+- ooh toggle for rage under barbarian things that BOTH changes all the stats / bonuses AND counts # of rages done in that session?
+- ideally have a "save session" functionality- is this what javascript states are about??? 
+- long rest (wipe slate clean except for decrease exhaustion by one) button
+- feels like there's gotta be a better way to include numbers that I'm gonna use and do math with javascript on.....
+-->
