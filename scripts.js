@@ -57,27 +57,21 @@
 // mods are inserted into weapons and skills that can use them (in a color to note they're different?)
 // 
 
-
-
-
-
+// does this line run function ac?
 ac();
+/// and this one creates function ac
 function ac() {
+// create variables for base and shield ac
     let baseAc = 23;
     let shieldAc = baseAc + 4;
-    document.getElementsByClassName("shieldAc").innerHTML = shieldAc;
-    document.getElementsByClassName("baseAc").innerHTML = baseAc;
-    
-    document.querySelectorAll(".shieldAc").innerHTML = shieldAc;
-    document.querySelectorAll(".baseAc").innerHTML = baseAc;
+// create a variable shieldAcElements, which is an HTMLcollection of elements with class "shieldAc"
+    let shieldAcElements= document.getElementsByClassName("shieldAc");
+
+// create variable indexShieldAcElements
+    let indexShieldAcElements; 
+
+// create a for loop saying that index shield elements= 0, equals everything less than length (which works because length will be one larger than the max number index of the collection), and incremements itself along the two extremes?
+    for(
+        indexShieldAcElements = 0; indexShieldAcElements < shieldAcElements.length; indexShieldAcElements++) 
+            {shieldAcElements[indexShieldAcElements].innerHTML = shieldAc;} 
 }
-
-// profBonus();
-//     function profBonus() {
-//         let pb = 6;
-//         document.getElementsByClassName("pb").innerHTML = pb;
-//     }
-
-// now.... nothing is working 
-
-
