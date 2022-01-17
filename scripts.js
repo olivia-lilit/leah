@@ -11,14 +11,43 @@
 // displays currentHitDice - takes user input for number used, and then subtracts that from maxHitDice
 
 
-// SKILL/STAT STUFF
-// user inputs: 
-// input strength score
-// input dex score
-// input con score
-// input int score
-// input wis score
-// input char score
+
+stats();
+function stats() {
+// change to taking these from user inputs at some point
+    const profBonus = 6;
+
+    const strScore = 14;
+    const dexScore = 22;
+    const conScore = 14;
+    const intScore = 11;
+    const wisScore = 12;
+    const chaScore = 12;
+
+    const strSaveProf = 1;
+
+    // strength
+    let strMod = (Math.floor((strScore - 10)/2))
+
+    let strModElements = document.getElementsByClassName("strMod");
+
+    for (strModElement of strModElements) {
+        if (strMod > 0) {
+            strModElement.textContent ="+" + strMod;
+        }
+        else 
+        strModElement.textContent = strMod;
+    }
+
+    let strSave = strMod + (profBonus* strSaveProf)
+
+    let strSaveElements = document.getElementsByClassName("strSave");
+
+    for (strSaveElement of strSaveElements) {
+        strSaveElement.textContent = strSave;
+    }
+
+}
 
 // do math on  _ _ _Score to get _ _ _Mod
 // score - 10= /2 (can be positive or negative) rounded towards 0 (is that always rounding down?)
