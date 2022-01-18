@@ -10,44 +10,64 @@
 // HIT DICE
 // displays currentHitDice - takes user input for number used, and then subtracts that from maxHitDice
 
+statsBetter();
+function statsBetter() {
 
+    let statScoreArray = [8, 22, 14, 11, 12, 12];
+    let statModArray = new Array(6);
+    let x;
+    for (x=0; x<statScoreArray.length; x++) {
+        statModArray[x] =(Math.floor((statScoreArray[x]- 10)/2));
+        console.log(statModArray);
+    }
 
-stats();
-function stats() {
-// change to taking these from user inputs at some point
-    const profBonus = 6;
-
-    const strScore = 14;
-    const dexScore = 22;
-    const conScore = 14;
-    const intScore = 11;
-    const wisScore = 12;
-    const chaScore = 12;
-
-    const strSaveProf = 1;
-
-    // strength
-    let strMod = (Math.floor((strScore - 10)/2))
 
     let strModElements = document.getElementsByClassName("strMod");
-
-    for (strModElement of strModElements) {
-        if (strMod > 0) {
-            strModElement.textContent ="+" + strMod;
+        for (strModElement of strModElements) {
+            if (statModArray[0] > 0) {
+                strModElement.textContent ="+" + statModArray[0];
+            }
+            else 
+            strModElement.textContent = statModArray[0];
         }
-        else 
-        strModElement.textContent = strMod;
-    }
-
-    let strSave = strMod + (profBonus* strSaveProf)
-
-    let strSaveElements = document.getElementsByClassName("strSave");
-
-    for (strSaveElement of strSaveElements) {
-        strSaveElement.textContent = strSave;
-    }
-
 }
+
+// stats();
+// function stats() {
+// // change to taking these from user inputs at some point
+//     const profBonus = 6;
+
+//     const strScore = 14;
+//     const dexScore = 22;
+//     const conScore = 14;
+//     const intScore = 11;
+//     const wisScore = 12;
+//     const chaScore = 12;
+
+//     const strSaveProf = 1;
+
+//     // strength
+//     let strMod = (Math.floor((strScore - 10)/2))
+
+//     let strModElements = document.getElementsByClassName("strMod");
+
+//     for (strModElement of strModElements) {
+//         if (strMod > 0) {
+//             strModElement.textContent ="+" + strMod;
+//         }
+//         else 
+//         strModElement.textContent = strMod;
+//     }
+
+//     let strSave = strMod + (profBonus* strSaveProf)
+
+//     let strSaveElements = document.getElementsByClassName("strSave");
+
+//     for (strSaveElement of strSaveElements) {
+//         strSaveElement.textContent = strSave;
+//     }
+
+// }
 
 // do math on  _ _ _Score to get _ _ _Mod
 // score - 10= /2 (can be positive or negative) rounded towards 0 (is that always rounding down?)
