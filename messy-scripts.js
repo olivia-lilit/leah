@@ -1,56 +1,32 @@
 
-// statsEvenBetter();
-// function statsEvenBetter() {
-//     function scoreToMod(number){
-//         return (Math.floor((number- 10)/2));
-//     }
-//     const statScoreArray = [8, 22, 14, 11, 12, 12];
-//     const statModArray = statScoreArray.map(scoreToMod);
+const statScoreArray = [14, 22, 14, 11, 12, 12];
 
-
-//     let strModElements = document.getElementsByClassName("strMod");
-//     for (strModElement of strModElements) {
-//         if (statModArray[0] > 0) {
-//             strModElement.textContent ="+" + statModArray[0];
-//         }
-//         else 
-//         strModElement.textContent = statModArray[0];
-//     }
-// }
-statsEvenBetterWritten ();
-function statsEvenBetterWritten() {
+stats();
+function stats() {
     function scoreToMod(number){
         return (Math.floor((number- 10)/2));
     }
-    const statScoreArray = [14, 22, 14, 11, 12, 12];
     const statModArray = statScoreArray.map(scoreToMod);
-    console.log(statModArray)
 
-    let modInstanceArray = new Array;
+
     let stats = ["str", "dex", "con", "int", "wis", "cha"]
-    function elementNameConcat(stat){
-        return `${stat}ModElement`;
+
+    for (stat of stats) {
+        let className = `${stat}ModElement`;
+        let classElements = document.getElementsByClassName(className);
+        for (classElement of classElements) {
+            classElement.textContent = statModArray[0]
+        }
     }
-    let statModElementNames = stats.map(elementNameConcat);  
 
-    function htmlCollectionFind(className) {
-        return document.getElementsByClassName(className);
-    }
-
-    let statModElementInstances = statModElementNames.map(htmlCollectionFind);
-
-    console.log(statModElementNames)
-    console.log(statModElementInstances) 
-
-    function accessInnerChange()
-    function accessInnerChange(array){
-       function showValue(item){
-           item.textContent = "ye";
-       }
-        return array.map(showValue);
-
-    }
-    
+    // let strModElements = document.getElementsByClassName("strModElements");
+    // for (strModElement of strModElements) {
+    //     if (statModArray[0] > 0) {
+    //         strModElement.textContent ="+" + statModArray[0];
+    //     }
+    //     else 
+    //     strModElement.textContent = statModArray[0];
+    // }
 
 
     // for (stat of stats) {
@@ -109,9 +85,18 @@ function statsEvenBetterWritten() {
 
 // }
 
-// do math on  _ _ _Score to get _ _ _Mod
-// score - 10= /2 (can be positive or negative) rounded towards 0 (is that always rounding down?)
-// is there some way to fuzzy match the beginnings so you only have to write the function once?
+// PSEUDO-FUCKING-EVERYTHING
+
+// HP
+// base is something you put into the code (or user input at bottom?)
+// displays currentHp, has user input box where you can put a positive or negative number, adds user input and reassigns that to currentHp
+
+// DEATH SAVES
+// three boxes - blank, S, F 
+
+// HIT DICE
+// displays currentHitDice - takes user input for number used, 
+// and then subtracts that from maxHitDice 
 
 // for user input there is:
 // checkbox that cycles through blank, P, and E (for skills) and blank, P for saves
@@ -144,32 +129,3 @@ function statsEvenBetterWritten() {
 
 // rage used boxes
 // mods are inserted into weapons and skills that can use them (in a color to note they're different?)
-// 
-
-// call function ac
-ac();
-///create function ac
-function ac() {
-// create variables for base and shield ac
-    let baseAc = 23;
-    let shieldAc = baseAc + 4;
-// create a variable shieldAcElements, which is an HTMLcollection of elements with class "shieldAc"
-    let shieldAcElements= document.getElementsByClassName("shieldAc");
-// for each piece of the collection, replace innerHTML with the value of shieldAc
-for (shieldAcElement of shieldAcElements) {
-    shieldAcElement.innerHTML = shieldAc;
-    }
-}
-// PSEUDO-FUCKING-EVERYTHING
-
-// HP
-// base is something you put into the code (or user input at bottom?)
-// displays currentHp, has user input box where you can put a positive or negative number, adds user input and reassigns that to currentHp
-
-// DEATH SAVES
-// three boxes - blank, S, F 
-
-// HIT DICE
-// displays currentHitDice - takes user input for number used, 
-// and then subtracts that from maxHitDice 
-}
