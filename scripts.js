@@ -1,5 +1,6 @@
 
 // Global constants:
+const stats = ["str", "dex", "con", "int", "wis", "cha"];
 const statScoreArray = [14, 22, 14, 11, 12, 12];
 
 // AC
@@ -10,21 +11,21 @@ function ac() {
 // writes shieldAc to all appropriate HTML elements
     let shieldAcElements= document.getElementsByClassName("shieldAc");
 for (shieldAcElement of shieldAcElements) {
-    shieldAcElement.innerHTML = shieldAc;
+    shieldAcElement.textContent = shieldAc;
     }
 }
 
 
-stats();
-function stats() {
-    let stats = ["str", "dex", "con", "int", "wis", "cha"]
-
+statMods();
+function statMods() {
+    // creates function that does math on the score to find the mod
     function scoreToMod(number){
         return (Math.floor((number- 10)/2));
     }
+    // applies above function to global const statScoreArray, creating statModArray
     const statModArray = statScoreArray.map(scoreToMod);
 
-    for (stat of stats) {
+    for (const stat of stats) {
         let className = `${stat}ModElement`;
         let statIndex = stats.indexOf(stat);
         let classElements = document.getElementsByClassName(className);

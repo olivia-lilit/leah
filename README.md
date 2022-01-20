@@ -2,7 +2,6 @@
 ## a fully customized D&D character sheet (for a homebrewed fighter/barbarian, for those in the know)
 #### current features:
 * given input of stat score in the array: calculates the modifier, prepends a plus sign if appropriate, searches for all instances of that modifier in the document (signified by class="_ _ _ ModElement"), and replaces the text content of each of those elements with the appropriate modifier.
-*  
 
 
 #### eventual goals:
