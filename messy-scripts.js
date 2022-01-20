@@ -32,21 +32,33 @@ function statsEvenBetterWritten() {
         return `${stat}ModElement`;
     }
     let statModElementNames = stats.map(elementNameConcat);  
+
+    function htmlCollectionFind(className) {
+        return document.getElementsByClassName(className);
+    }
+
+    let statModElementInstances = statModElementNames.map(htmlCollectionFind);
+
     console.log(statModElementNames)
+    console.log(statModElementInstances) 
+
+    function accessInnerChange()
+    function accessInnerChange(array){
+       function showValue(item){
+           item.textContent = "ye";
+       }
+        return array.map(showValue);
+
+    }
     
-
-
-
-
-
 
 
     // for (stat of stats) {
     //     let statModElement=`${stat}ModElement`;
     //     // creates strModElement, dexModElement, etc- works!
 
-        let statModElementInstances = document.getElementsByClassName(`${statModElement}`);
-        statModElementInstances.textContent = statModArray[stats.indexOf(`${stat}`)];
+        // statModElementInstances = document.getElementsByClassName(`${statModElement}`);
+        // statModElementInstances.textContent = statModArray[stats.indexOf(`${stat}`)];
         
 //         console.log(statModElementInstances);
 //     }
@@ -159,4 +171,5 @@ for (shieldAcElement of shieldAcElements) {
 
 // HIT DICE
 // displays currentHitDice - takes user input for number used, 
-// and then subtracts that from maxHitDice
+// and then subtracts that from maxHitDice 
+}
