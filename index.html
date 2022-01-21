@@ -37,7 +37,7 @@
             <td class="shieldAc"></td>
             <td class="hp">161</td>
             <td class="baseSpeed">35</td>
-            <td class="pb"></td>
+            <td class="profBonus"></td>
             <td class="initBonus">+6</td>
             <td>S|</td>
             <!-- will need to deal with a checkbox system for death saves (and hit dice) later - maybe making each span two columns, so they can have a label and then a checkbox area (or "used" area respectively) -->
@@ -50,7 +50,7 @@
             <td></td>
             <td></td>
             <td>F|</td>
-            <td>2d12|</td>
+            <td class="barbarianHitDice">2d12|</td>
         </tr>
 
 
@@ -64,146 +64,120 @@
                 <th>Score</th>
                 <th>Skill</th>
                 <th>Mod</th>
-                <th>SP?</th>
                 <th>Save</th>
             </tr>
             <tr>
-                <td>14</td>
+                <td class="strScore"></td>
                 <td>Strength</td>
-                <td class="strModElement"></td>
-                <td>y</td>
+                <td class="strMod"></td>
                 <td class="strSave"></td>
             </tr>
             <tr>
-                <td>22</td>
+                <td class="dexScore"></td>
                 <td>Dexterity</td>
-                <td class="dexModElement"></td>
-                <td>n</td>
-                <td>+6</td>
+                <td class="dexMod"></td>
+                <td class="dexSave"></td>
             </tr>
             <tr>
-                <td>14</td>
+                <td class="conScore">14</td>    
                 <td>Constitution</td>
-                <td>+2</td>
-                <td>y</td>
-                <td>+8</td>
+                <td class="conMod">+2</td>
+                <td class="conSave"></td>
             </tr>
             <tr>
-                <td>11</td>
+                <td class="intScore"></td>
                 <td>Intelligence</td>
-                <td>0</td>
-                <td>n</td>
-                <td>0</td>
+                <td class="intMod"></td>
+                <td class="intSave"></td>
             </tr>
             <tr>
-                <td>12</td>
+                <td class="wisScore"></td>
                 <td>Wisdom</td>
-                <td>+1</td>
-                <td>n</td>
-                <td>+1</td>
+                <td class="wisMod"></td>
+                <td class="wisSave"></td>
             </tr>
             <tr>
-                <td>12</td>
+                <td class="chaScore"></td>
                 <td>Charisma</td>
-                <td>+1</td>
-                <td>n</td>
-                <td>+1</td>
+                <td class="chaMod"></td>
+                <td class="chaSave"></td>
             </tr>
             </table>
             <table id="skills">
                 <th colspan="4">Skills</th>
                 <tr>
-                    <th>Prof/Exp</th>
                     <th>Skill</th>
                     <th>Mod</th>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Acrobatics</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Animal Handling</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Arcana</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Athletics</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Deception</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>History</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Insight</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Intimidation</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Investigation</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Medicine</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Nature</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Perception</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Performance</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Persuasion</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Religion</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Sleight of Hand</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Stealth</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>Survival</td>
                     <td></td>
                 </tr>
@@ -312,15 +286,3 @@
 
 </body>
 </html>
-
-
-<!-- NOTES
-- figure out a way to display more info if needed, less for simplicty - flip, hover tips, etc
-- ultimately should calculate skill bonuses by stats
-- should be able to update all relevant #s when things are toggled like haste, rage, etc
-- ooh toggle for rage under barbarian things that BOTH changes all the stats / bonuses AND counts # of rages done in that session?
-- ideally have a "save session" functionality- is this what javascript states are about??? 
-- long rest (wipe slate clean except for decrease exhaustion by one) button
-- feels like there's gotta be a better way to include numbers that I'm gonna use and do math with javascript on.....
--->
-
