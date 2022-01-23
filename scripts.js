@@ -1,11 +1,6 @@
 
 // Global constants:
 const profBonus = 6;
-const stats = ["str", "dex", "con", "int", "wis", "cha"];
-const statScoreArray = [14, 22, 14, 11, 12, 12];
-const statSaveMultiplier = [1, 0, 1, 0, 0, 0];
-const skills = ["acro", "anim", "arca", "athl", "dece", "hist", "insi", "inti", "inve", "medi", "natu", "perc", "perf", "pers", "reli", "slei", "stea", "surv"];
-
 
 // AC
 ac();
@@ -14,14 +9,27 @@ function ac() {
     let shieldAc = baseAc + 4;
 // writes shieldAc to all appropriate HTML elements
     let shieldAcElements= document.getElementsByClassName("shieldAc");
-for (shieldAcElement of shieldAcElements) {
+for (const shieldAcElement of shieldAcElements) {
     shieldAcElement.textContent = shieldAc;
     }
 }
 
+// PROF BONUS
+profBonusWriter();
+function profBonusWriter() {
+let profBonusElements = document.getElementsByClassName("profBonus");
+    for (const profBonusElement of profBonusElements) {
+        profBonusElement.textContent = `+${profBonus}`
+    }
+}
 
-statMods();
-function statMods() {
+// STAT SCORES, MODS, AND SAVES
+const stats = ["str", "dex", "con", "int", "wis", "cha"];
+const statScoreArray = [14, 22, 14, 11, 12, 12];
+const statSaveMultiplier = [1, 0, 1, 0, 0, 0];
+
+statsAndSkills();
+function statsAndSkills() {
     // creates function that does math on the score to find the mod
     function scoreToMod(number){
         return (Math.floor((number- 10)/2));
@@ -37,8 +45,18 @@ function statMods() {
             classElement.textContent = plusSigns(statModArray[statIndex]);
         }
     }
-    //create new array of stat save values
 
+    for (const stat of stats){
+        let className = `${stat}Score`;
+        let statIndex = stats.indexOf(stat);
+        let classElements = document.getElementsByClassName(className);
+        for (classElement of classElements) {
+            classElement.textContent = statScoreArray[statIndex];
+        }
+    }
+
+
+    //create new array of stat save values
     function modToSave(statMod) {
         return statMod + (profBonus * (statSaveMultiplier[statModArray.indexOf(statMod)]));
     }
@@ -56,9 +74,30 @@ function statMods() {
         }
     }
 
+    let skills= [["acro", "dex", 0],["anim", "wis", 1],["arca", "int", 0], ["athl", "str", 1], ["dece", "cha", 0], ["hist", "int", 0], ["insi", "wis", 0], ["inti", "cha", 1], ["inve", "int", 1], ["medi", "wis", 1], ["natu", "int", 0], ["perc", "wis", 2], ["perf", "cha", 0], ["pers", "cha", 1], ["reli", "int", 0], ["slei", "dex", 0], ["stea", "dex", 1], ["surv", "wis", 1] ];
+
+    skillMods();
+    function skillMods (){
+        for (skill of skills){
+            let skillIndex = skills.indexOf(skill);
+            let skillName = skill[0];
+            let skillMod=  statModArray[stats.indexOf(skills[skillIndex][1])];
+            skillMod += profBonus*(skills[skillIndex][2]);
+
+            let classElements = document.getElementsByClassName(`${skillName}Mod`);
+            for (classElement of classElements) {
+                classElement.textContent = plusSigns(skillMod);
+            }
+            console.log(skillMod)
+        }
     }
 
+}
 
+
+
+
+// GENERIC FUNCTIONS TO CALL IF NEEDED
 function plusSigns(number) {
     if (number >0) { 
        return number = "+" + number;
