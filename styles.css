@@ -1,20 +1,26 @@
 * {
-    border: 1px solid black; 
+    /* border: 1px solid red;  */
     /* margin: 10px;
     background-color: rgba(100, 117, 0, 0.1);
     min-width: 20px;
     min-height: 20px; */
     font-family: "Josefin Sans", sans-serif;
     --accent-color: rgb(166, 185, 247);
-    /* text-transform: lowercase; */
+    text-transform: lowercase;
+}
 
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 2px;
 }
 
 body {
     padding: 0;
     display: flex;
     flex-direction: column;
-
 }
 
 header {
@@ -22,14 +28,12 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    padding: 20px;
 }
 
 h1,h2 {
     margin:0;
     padding: 0;
     text-transform: none;
-
 }
 
 h1 {
@@ -52,9 +56,7 @@ a:hover {
 
 #health-stats {
     border: 2px solid black;
-}
-col {
-    width: 10vw;
+    margin: 10px;
 }
 table#health-stats td {
     text-align: center;
@@ -62,11 +64,24 @@ table#health-stats td {
 
 #stats-and-weapons {
     display: flex;
+    justify-content: space-evenly;
+}
+
+#stats {
+    border: 2px solid black;
+    margin: 10px;
+}
+#stats td {
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
 }
 
 #left, #right {
     flex: 1 1 auto;
     display: flex;
+    max-width: 30vw;
     flex-direction: column;
 }
 
@@ -87,4 +102,8 @@ display: flex;
     max-width: 600px;
     margin: 10px;
 
+}
+
+input[type="checkbox"]:checked {
+accent-color: var(--accent-color);
 }

@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700">
     <script type="text/javascript" src="scripts.js" defer></script>
+    <link rel="icon" href="assets/icons/cowboy-hat-heavy.png">
     <title>Leah Character Sheet</title>
     <meta name="author" content="Olivia Rudd">
 </head>
@@ -39,7 +40,7 @@
             <td class="baseSpeed">35</td>
             <td class="profBonus"></td>
             <td class="initBonus">+6</td>
-            <td>S|</td>
+            <td>Saves:<input type="checkbox" name="death-saves" id="death-save1"><input type="checkbox" name="death-saves" id="death-save2"><input type="checkbox" name="death-saves" id="death-save3"></td>
             <!-- will need to deal with a checkbox system for death saves (and hit dice) later - maybe making each span two columns, so they can have a label and then a checkbox area (or "used" area respectively) -->
             <td class="fighterHitDice">16d10|</td>
         </tr>
@@ -49,7 +50,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>F|</td>
+            <td>Fails:<input type="checkbox" name="death-fail" id="death-fail1"><input type="checkbox" name="death-fail" id="death-fail2"><input type="checkbox" name="death-fail" id="death-fail3"></td>
             <td class="barbarianHitDice">2d12|</td>
         </tr>
 
@@ -59,10 +60,9 @@
     <div id="stats-and-weapons">
         <div id="left">
             <table id="stats">
-            <tr><th colspan="5">Stats</th></tr>
             <tr>
                 <th>Score</th>
-                <th>Skill</th>
+                <th>Stat</th>
                 <th>Mod</th>
                 <th>Save</th>
             </tr>
@@ -102,84 +102,81 @@
                 <td class="chaMod"></td>
                 <td class="chaSave"></td>
             </tr>
-            </table>
-            <table id="skills">
-                <th colspan="4">Skills</th>
                 <tr>
-                    <th>Skill</th>
-                    <th>Mod</th>
+                    <th colspan="2">Skill</th>
+                    <th colspan="2">Mod</th>
                 </tr>
                 <tr>
-                    <td>Acrobatics</td>
-                    <td class="acroMod"></td>
+                    <td colspan="2">Acrobatics</td>
+                    <td colspan="2" class="acroMod"></td>
                 </tr>
                 <tr>
-                    <td>Animal Handling</td>
-                    <td class="animMod"></td>
+                    <td colspan="2">Animal Handling</td>
+                    <td colspan="2" class="animMod"></td>
                 </tr>
                 <tr>
-                    <td>Arcana</td>
-                    <td class="arcaMod"> </td>
+                    <td colspan="2">Arcana</td>
+                    <td colspan="2" class="arcaMod"> </td>
                 </tr>
                 <tr>
-                    <td>Athletics</td>
-                    <td class="athlMod"></td>
+                    <td colspan="2">Athletics</td>
+                    <td colspan="2" class="athlMod"></td>
                 </tr>
                 <tr>
-                    <td>Deception</td>
-                    <td class="deceMod"></td>
+                    <td colspan="2">Deception</td>
+                    <td colspan="2" class="deceMod"></td>
                 </tr>
                 <tr>
-                    <td>History</td>
-                    <td class="histMod"></td>
+                    <td colspan="2">History</td>
+                    <td colspan="2" class="histMod"></td>
                 </tr>
                 <tr>
-                    <td>Insight</td>
-                    <td class="insiMod"></td>
+                    <td colspan="2">Insight</td>
+                    <td colspan="2" class="insiMod"></td>
                 </tr>
                 <tr>
-                    <td>Intimidation</td>
-                    <td class="intiMod"></td>
+                    <td colspan="2">Intimidation</td>
+                    <td colspan="2" class="intiMod"></td>
                 </tr>
                 <tr>
-                    <td>Investigation</td>
-                    <td class="inveMod"></td>
+                    <td colspan="2">Investigation</td>
+                    <td  colspan="2"class="inveMod"></td>
                 </tr>
                 <tr>
-                    <td>Medicine</td>
-                    <td class="mediMod"></td>
+                    <td colspan="2">Medicine</td>
+                    <td colspan="2" class="mediMod"></td>
                 </tr>
                 <tr>
-                    <td>Nature</td>
-                    <td class="natuMod"></td>
+                    <td colspan="2">Nature</td>
+                    <td colspan="2" class="natuMod"></td>
                 </tr>
                 <tr>
-                    <td>Perception</td>
-                    <td class="percMod"></td>
+                    <td colspan="2">Perception</td>
+                    <td colspan="2" class="percMod"></td>
                 </tr>
                 <tr>
-                    <td>Performance</td>
-                    <td class="perfMod"></td>
+                    <td colspan="2">Performance</td>
+                    <td colspan="2" class="perfMod"></td>
                 </tr>
                 <tr>
-                    <td>Persuasion</td>
-                    <td class="persMod"></td>
+                    <td colspan="2">Persuasion</td>
+                    <td colspan="2" class="persMod"></td>
                 </tr>
                 <tr>
-                    <td>Religion</td>
-                    <td class="reliMod"></td>
+                    <td colspan="2">Religion</td>
+                    <td colspan="2" class="reliMod"></td>
                 </tr>
                 <tr>
-                    <td>Sleight of Hand</td>
-                    <td class="sleiMod"></td>
+                    <td colspan="2">Sleight of Hand</td>
+                    <td colspan="2" class="sleiMod"></td>
                 </tr>
                 <tr>
-                    <td>Stealth</td>
-                    <td class="steaMod"></td>
+                    <td colspan="2">Stealth</td>
+                    <td colspan="2" class="steaMod"></td>
                 </tr>
                 <tr>
-                    <td>Survival</td>
-                    <td class="survMod"></td>
+                    <td colspan="2">Survival</td>
+                    <td colspan="2" class="survMod"></td>
                 </tr>
 
             </table>
@@ -213,17 +210,19 @@
             </tr>
             <tr>
                 <th>Second Wind</th>
-                <td><span class="usedBox"></span></td>
+                <td> <input type="checkbox" name="second-wind" id="wind1"> </td>
                 <td>use BA for HP=1d10 + <span class="fighterLevel"></span> (replenishes after S/L rest)</td>
             </tr>
             <tr>
                 <th>Action Surge</th>
-                <td><span class="usedBox"></span></td>
+                <td><input type="checkbox" name="action-surge" id="action-surge"></td>
                 <td>can take one full extra action (replenishes after S/L rest)</td>
             </tr>
             <tr>
                 <th>Indomitable</th>
-                <td><span class="usedBox"></span><span class="usedBox"></span</td>
+                <td> 
+                    <input type="checkbox" name="indomitable" id="indomitable1"> <input type="checkbox" name="indomitable" id="indomitable2">
+                </td>
                 <td>reroll failed saving throw </td>
             </tr>
             <tr>
@@ -235,7 +234,7 @@
         <table class="abilities" id="barbarian">
             <tr>
                 <th>Rage</th>
-                <td><span class="usedBox"> <span class="usedBox"></span></td>
+                <td> <input type="checkbox" name="rage" id="rage1"><input type="checkbox" name="rage" id="rage2"></td>
                 <td>Can go into a rage twice every long rest 
                     rage as BA 
                     <ul>
@@ -281,6 +280,7 @@
         <div>inspiration</div>
         <div>exhaustion</div>
     </div>
+    <button id="long-rest">Long Rest</button>
 
     <footer>icon attribution </footer>
 
