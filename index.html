@@ -42,7 +42,7 @@
             <td class="initBonus">+6</td>
             <td>Saves:<input type="checkbox" name="death-saves" id="death-save1"><input type="checkbox" name="death-saves" id="death-save2"><input type="checkbox" name="death-saves" id="death-save3"></td>
             <!-- will need to deal with a checkbox system for death saves (and hit dice) later - maybe making each span two columns, so they can have a label and then a checkbox area (or "used" area respectively) -->
-            <td class="fighterHitDice">16d10|</td>
+            <td class="fighterHitDice">16d10 <input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""></td>
         </tr>
         <tr>
             <td class="baseAc"></td>
@@ -51,7 +51,7 @@
             <td></td>
             <td></td>
             <td>Fails:<input type="checkbox" name="death-fail" id="death-fail1"><input type="checkbox" name="death-fail" id="death-fail2"><input type="checkbox" name="death-fail" id="death-fail3"></td>
-            <td class="barbarianHitDice">2d12|</td>
+            <td class="barbarianHitDice">2d12 <input type="checkbox"><input type="checkbox"></td>
         </tr>
 
 
@@ -188,11 +188,69 @@
                 </table> bullets
                 </div>
                 <div id="weapons">weapons</div>
+                <div id="maneuvers">
+                    <table>
+                        <tr> 
+                            <th colspan="2">Maneuvers</th>
+                        </tr>
+                        <tr>
+                            <td> 7d10 superiority dice </td>
+                                <td>
+                                    <input type="checkbox">
+                                    <input type="checkbox">
+                                    <input type="checkbox">
+                                    <input type="checkbox">
+                                    <input type="checkbox">
+                                    <input type="checkbox">
+                                    <input type="checkbox">
+                                </td>
+                        </tr>
+                        <tr>
+                            <th>Riposte</th>
+                            <td>when missed w/ melee, use reaction and SD to do a melee attack against my attacker. add SD to damage if hits </td>
+                        </tr>
+                        <tr>
+                            <th>Parry</th>
+                            <td>when hit w/ melee, use reaction and SD to decrease damage by SD + 6</td>
+                        </tr>
+                        <tr>
+                            <th>Goading Attack</th>
+                            <td>when I hit with weapon, SD to goad creature into attacking me (wis save). if they fail, disadv. on atk rolls not on me</td>
+                        </tr>
+                        <tr>
+                            <th>Snipe</th>
+                            <td>as bonus action, use SD to make weapon attack. adding SD to damage roll</td>
+                        </tr>
+                        <tr>
+                            <th>Disarming Attack</th>
+                            <td>when I hit, SD to disarm (drop one thing). Add SD to damage and strength save to hold on. </td>
+                        </tr>
+                        <tr>
+                            <th>Feinting Attack</th>
+                            <td>SD to use bonus action to feint, giving advantage on my next attack (if hits, add SD to damage)</td>
+                        </tr>
+                        <tr>
+                            <th>Precision Attack</th>
+                            <td>add SD to weapon attack roll (before or after roll)</td>
+                        </tr>
+                        <tr>
+                            <th>Commanding Presence</th>
+                            <td>When you make a charisma (intimidation, performance, or persuasion check, add one SD to ability check </td>
+                        </tr>
+                        <tr>
+                            <th>Tactical Assessment</th>
+                            <td>When you make an intelligence (investigation, history) or wisdom (insight) check, add one SD to ability check  (</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
     </div>
             
     <div id="abilities-and-profs">
         <table class="abilities">
+            <tr>
+                <th colspan="3">Fighter</th>
+            </tr>
             <tr>
                 <th>Multiple Attack</th>
                 <td></td>
@@ -233,6 +291,9 @@
         </table>
         <table class="abilities" id="barbarian">
             <tr>
+                <th colspan="3">Barbarian</th>
+            </tr>
+            <tr>
                 <th>Rage</th>
                 <td> <input type="checkbox" name="rage" id="rage1"><input type="checkbox" name="rage" id="rage2"></td>
                 <td>Can go into a rage twice every long rest 
@@ -241,7 +302,6 @@
                         <li>adv. on str checks and saves</li>
                         <li>resist. to physical damage</li>
                         <li>add +2 to str weapon attack and damage</li>
-                        <!-- this will be redundant because it will be automated eventually! -->
                     </ul>
                 </td>
             </tr>
@@ -268,8 +328,34 @@
                 <td>when a creature you can see attacks a creature other than you within 5 feet, you can use your reaction to impose disadvantage on that attack roll</td>
             </tr>
         </table>
-        <div id="maneuvers">maneuvers</div>
-        <div id="profs">proficiencies</div>
+
+        <div id="profs">
+            <table>
+                <tr>
+                    <th>Proficiencies</th>
+                </tr>
+                <tr>
+                    <td>all armor and shields</td>
+                </tr>
+                <tr>
+                    <td>thieves' tools</td>
+                </tr>
+                <tr>
+                    <td>simple weapons</td>
+                </tr>
+                <tr>
+                    <td>martial weapons</td>
+                </tr>
+                <tr>
+                    <td>prime medicine kit</td>
+                </tr>
+
+                <tr>
+                    <td>all languages</td>
+                </tr>
+
+            </table>
+        </div>
     </div>
 
     <div id="inventory">inventory</div>
