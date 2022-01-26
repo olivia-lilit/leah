@@ -40,7 +40,7 @@
             <td class="baseSpeed">35</td>
             <td class="profBonus"></td>
             <td class="initBonus">+6</td>
-            <td>Saves:<input type="checkbox" name="death-saves" id="death-save1"><input type="checkbox" name="death-saves" id="death-save2"><input type="checkbox" name="death-saves" id="death-save3"></td>
+            <td>Successes:<input type="checkbox" name="death-saves" id="death-save1"><input type="checkbox" name="death-saves" id="death-save2"><input type="checkbox" name="death-saves" id="death-save3"></td>
             <!-- will need to deal with a checkbox system for death saves (and hit dice) later - maybe making each span two columns, so they can have a label and then a checkbox area (or "used" area respectively) -->
             <td class="fighterHitDice">16d10 <input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""></td>
         </tr>
@@ -50,7 +50,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>Fails:<input type="checkbox" name="death-fail" id="death-fail1"><input type="checkbox" name="death-fail" id="death-fail2"><input type="checkbox" name="death-fail" id="death-fail3"></td>
+            <td>Failures:<input type="checkbox" name="death-fail" id="death-fail1"><input type="checkbox" name="death-fail" id="death-fail2"><input type="checkbox" name="death-fail" id="death-fail3"></td>
             <td class="barbarianHitDice">2d12 <input type="checkbox"><input type="checkbox"></td>
         </tr>
 
@@ -184,9 +184,72 @@
 
         <div id="right">
                 <div id="guns"> guns
-                <table id="bullets">
-                </table> bullets
                 </div>
+                <table id="bullets">
+                    <tr>
+                        <th>#</th>
+                        <th>type</th>
+                        <th>damage</th>
+                    </tr>
+                    <tr>
+                        <td><input type="number"><td>
+                        <td>regular</td>
+                        <td>1d10(40) or 1d6(120</td>
+                    </tr>
+                    <tr>
+                        <td><input type="number"><td>
+                        <td>powder</td>
+                        <td>regular + 8</td>
+                    </tr>
+                    <tr>
+                        <td><input type="number"><td>
+                        <td>stopping</td>
+                        <td>regular + target loses movement</td>
+                    </tr>
+                    <tr>
+                        <td><input type="number"><td>
+                        <td>clockwork</td>
+                        <td>regular + target must use reaction or take 4d12 damage</td>
+                    </tr>
+                    <tr>
+                        <td><input type="number"><td>
+                        <td>fireball</td>
+                        <td>20ft radius sphere, dex save to halve 8d6 fire damage</td>
+                    </tr>
+                    <tr>
+                        <td><input type="number"><td>
+                        <td>fog cloud</td>
+                        <td>20 radius sphere of opaque fog I can see through</td>
+                    </tr>
+                    <tr>
+                        <td><input type="number"><td>
+                        <td>shatter</td>
+                        <td>10 radius sphere noise,con save to halve 3d8 thunder damage</td>
+                    </tr>
+                    <tr>
+                        <td><input type="number"><td>
+                        <td>dispel magic</td>
+                        <td>any spell of 3rd level or lower ends</td>
+                    </tr>
+                    <tr>
+                        <td><input type="number"><td>
+                        <td>counterspell</td>
+                        <td>as reaction, a creature fails to complete their casting of a 3rd level spell or lower</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    
+                </table> 
+
                 <div id="weapons">weapons</div>
                 <div id="maneuvers">
                     <table>
@@ -194,7 +257,7 @@
                             <th colspan="2">Maneuvers</th>
                         </tr>
                         <tr>
-                            <td> 7d10 superiority dice </td>
+                            <th> 7d10 superiority dice </th>
                                 <td>
                                     <input type="checkbox">
                                     <input type="checkbox">
@@ -247,7 +310,7 @@
     </div>
             
     <div id="abilities-and-profs">
-        <table class="abilities">
+        <table class="abilities" id="fighter">
             <tr>
                 <th colspan="3">Fighter</th>
             </tr>
@@ -318,13 +381,22 @@
         </table>
         <table class="abilities" id="shield">
             <tr>
-                <th>Shield Master Feat</th>
-                <th>Protection Fighter Style</th>
+                <th colspan="2">corvin rath's shield</th>
             </tr>
             <tr>
-                <td>if you take an attack, you can use BA to try to shove a creature within 5 feet of you with your shield.
-                If you aren't incapacitated, you can add your shield's AC bonus to any dex save you make against a spell or other harmful effect that targets only you.
-                If you are subjected to an effect that allows you to make a dex save to take only half damage, you can use your reaction to take no damage if you succeed on the save.
+                <th rowspan="3">Shield Master Feat</th>
+                <td>if you take an attack, you can use BA to try to shove a creature within 5 feet of you with your shield.</td>
+            </tr>
+            <tr>
+                <td>If you aren't incapacitated, you can add your shield's AC bonus to any dex save you make against a spell or other harmful effect that targets only you.</td>
+            </tr>
+            <tr>
+                <td>If you are subjected to an effect that allows you to make a dex save to take only half damage, you can use your reaction to take no damage if you succeed on the save.</td>
+            </tr>
+
+
+            <tr>
+                <th>Protection Fighter Style</th>
                 <td>when a creature you can see attacks a creature other than you within 5 feet, you can use your reaction to impose disadvantage on that attack roll</td>
             </tr>
         </table>
@@ -360,15 +432,9 @@
 
     <div id="inventory">inventory</div>
 
-    <div id="status-effect">
-        <div>haste</div>
-        <div>slow</div>
-        <div>inspiration</div>
-        <div>exhaustion</div>
-    </div>
     <button id="long-rest">Long Rest</button>
 
-    <footer>icon attribution </footer>
+    <!-- <footer>icon attribution </footer> -->
 
 </body>
 </html>
