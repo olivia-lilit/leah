@@ -62,7 +62,6 @@ function statsAndSkills() {
     }
      
     const statSaveArray = statModArray.map(modToSave);
-    console.log(statSaveArray)
 
     // apply stat save values to stat save elements
     for (const stat of stats) {
@@ -88,13 +87,13 @@ function statsAndSkills() {
             for (classElement of classElements) {
                 classElement.textContent = plusSigns(skillMod);
             }
-            console.log(skillMod)
         }
     }
-
 }
 
-
+const longRestButton = document.querySelector('button');
+console.log(longRestButton)
+longRestButton.addEventListener('click', longRest);
 
 
 // GENERIC FUNCTIONS TO CALL IF NEEDED
@@ -105,4 +104,10 @@ function plusSigns(number) {
     else {
         return number;
     }
+}
+
+function longRest(){
+    // set hp back to hp max
+    // uncheck any checked boxes
+
 }

@@ -1,5 +1,5 @@
 * {
-    /* border: 1px solid red;  */
+    /* border: 2px dotted hotpink;  */
     /* margin: 10px;
     background-color: rgba(100, 117, 0, 0.1);
     min-width: 20px;
@@ -7,6 +7,7 @@
     font-family: "Josefin Sans", sans-serif;
     --accent-color: rgb(166, 185, 247);
     text-transform: lowercase;
+    box-sizing: border-box;
 }
 
 table {
@@ -58,21 +59,18 @@ a:hover {
     border: 2px solid black;
     margin: 10px;
 }
-table#health-stats td {
-    text-align: center;
-}
 
 #stats-and-weapons {
     display: flex;
     justify-content: space-evenly;
 }
 
-#stats {
+#stats, #guns, #bullets, #weapons, #maneuvers, .abilities, #profs, #inventory {
     border: 2px solid black;
     margin: 10px;
 }
 #stats td {
-    text-align: center;
+    /* text-align: center; */
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 
@@ -81,7 +79,7 @@ table#health-stats td {
 #left, #right {
     flex: 1 1 auto;
     display: flex;
-    max-width: 30vw;
+    max-width: 60%;
     flex-direction: column;
 }
 
@@ -106,4 +104,8 @@ display: flex;
 
 input[type="checkbox"]:checked {
 accent-color: var(--accent-color);
+}
+
+th, td {
+    text-align: left;
 }
