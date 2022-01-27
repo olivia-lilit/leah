@@ -35,6 +35,15 @@ function doDamage() {
         if (hpCurrent>hpMax){
             hpCurrent = hpMax;
         }
+        if(hpCurrent< (-(hpMax/2))){
+            hpCurrent = 0;
+            alert("Mariah would be so disappointed")
+        }
+        else if (hpCurrent<0) {
+            hpCurrent = 0;
+            alert("Somebody give this robit some ginger cookies!");
+        }
+
         damHealField.value = "";
     
     let hpCurrentElements = document.getElementsByClassName("hpCurrent");
