@@ -252,7 +252,29 @@
                     
                 </table> 
 
-                <div id="weapons">weapons</div>
+                <table id="weapons">
+                    <tr>
+                        <th>weapon</th>
+                        <th>+ to attack</th>
+                        <th>damage</th>
+                    </tr>
+                    <tr>
+                        <td class="flex"><img class="icon" src="assets/icons/dagger.png">dagger</td>
+                        <td>+11</td>
+                        <td>1d6<span class="dexMod"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="flex"> <img class="icon" src="assets/icons/sword.png">Lexicon</td>
+                        <td>+9 <span class="rageBonus"></span></td>
+                        <td>1d8+4<span class="rageBonus"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="flex"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+
                 <div id="maneuvers">
                     <table>
                         <tr> 
@@ -430,7 +452,39 @@
 
             </table>
         </div>
-        <div id="inventory">inventory</div>
+        <table id="inventory">
+            <tr>
+                <th colspan="2">inventory</th>
+            </tr>
+            <tr>
+                <td>gold</td>
+                <td><input type="number" id="gold"></td>
+            </tr>
+            <tr>
+                <td>silver</td>
+                <td><input type="number" id="silver"></td>
+            </tr>
+            <tr>
+                <td>copper</td>
+                <td><input type="number" id="copper"></td>
+            </tr>
+            <tr>
+                <td>teleporting lode stones</td>
+                <td>I have one, Hubert has the other</td>
+            </tr>
+            <tr>
+                <td>thieves' tools</td>
+                <td>disguised as tinker's tools</td>
+            </tr>
+            <tr>
+                <td>health potion</td>
+                <td>2d4+2</td>
+            </tr>
+            <tr>
+                <td>explorer's pack</td>
+                <td>10 torches, 10 rations, 50 ft rope</td>
+            </tr>
+        </table>
 
     </div>
 
