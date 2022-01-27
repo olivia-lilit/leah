@@ -27,7 +27,7 @@
         </colgroup>
         <tr>
             <th>AC</th>
-            <th>HP/161</th>
+            <th>HP (<span class="hpMax"></span>)</th>
             <th>Speed</th>
             <th>Prof. Bonus</th>
             <th>Initiative</th>
@@ -36,17 +36,19 @@
         </tr>
         <tr>
             <td class="shieldAc"></td>
-            <td class="hp">161</td>
+            <td class="flex"><input type="number" id="damHeal"> <button id="damHealSubmit">Submit</button>
+<!-- 
+            <img src="assets/icons/gear-heart.png" alt="Gear heart" class="icon" id="damHealSubmit"> -->
+            </td>
             <td class="baseSpeed">35</td>
             <td class="profBonus"></td>
             <td class="initBonus">+6</td>
             <td>Successes:<input type="checkbox" name="death-saves" id="death-save1"><input type="checkbox" name="death-saves" id="death-save2"><input type="checkbox" name="death-saves" id="death-save3"></td>
-            <!-- will need to deal with a checkbox system for death saves (and hit dice) later - maybe making each span two columns, so they can have a label and then a checkbox area (or "used" area respectively) -->
             <td class="fighterHitDice">16d10 <input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""></td>
         </tr>
         <tr>
             <td class="baseAc"></td>
-            <td></td>
+            <td class="hpCurrent"></td>
             <td></td>
             <td></td>
             <td></td>
@@ -428,11 +430,12 @@
 
             </table>
         </div>
+        <div id="inventory">inventory</div>
+
     </div>
 
-    <div id="inventory">inventory</div>
 
-    <button id="long-rest">Long Rest</button>
+    <!-- <button id="long-rest">Long Rest</button> -->
 
     <!-- <footer>icon attribution </footer> -->
 

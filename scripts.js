@@ -2,6 +2,57 @@
 // Global constants:
 const profBonus = 6;
 
+// GENERIC FUNCTIONS TO CALL IF NEEDED
+function plusSigns(number) {
+    if (number >0) { 
+       return number = "+" + number;
+    }
+    else {
+        return number;
+    }
+}
+
+
+
+// HP
+    // create and write hpMax to appropriate elements
+const hpMax = 161;
+let hpMaxElements = document.getElementsByClassName("hpMax");
+for (const hpMaxElement of hpMaxElements){
+    hpMaxElement.textContent = hpMax;
+}
+    // create all the components of the addition 
+let hpCurrent = hpMax; // at session start
+const damHealButton= document.getElementById("damHealSubmit");
+    // access the number inside the input field
+const damHealField= document.querySelector('#damHeal');
+
+
+function doDamage() {
+
+    let damHeal = Number(damHealField.value); // access CURRENT value of damHeal and turn it into a number
+    hpCurrent += damHeal; 
+        if (hpCurrent>hpMax){
+            hpCurrent = hpMax;
+        }
+        damHealField.value = "";
+    
+    let hpCurrentElements = document.getElementsByClassName("hpCurrent");
+    for (const hpCurrentElement of hpCurrentElements){
+        hpCurrentElement.textContent = hpCurrent;
+    }
+}
+
+damHealButton.addEventListener('click', doDamage);
+
+// write correct hpCurrent to all elements 
+let hpCurrentElements = document.getElementsByClassName("hpCurrent");
+for (const hpCurrentElement of hpCurrentElements){
+    hpCurrentElement.textContent = hpCurrent;
+}
+
+
+
 // AC
 ac();
 function ac() {
@@ -91,23 +142,15 @@ function statsAndSkills() {
     }
 }
 
-const longRestButton = document.querySelector('button');
-console.log(longRestButton)
-longRestButton.addEventListener('click', longRest);
+// const longRestButton = document.querySelector('button');
+// console.log(longRestButton)
+// longRestButton.addEventListener('click', longRest);
 
 
-// GENERIC FUNCTIONS TO CALL IF NEEDED
-function plusSigns(number) {
-    if (number >0) { 
-       return number = "+" + number;
-    }
-    else {
-        return number;
-    }
-}
 
-function longRest(){
-    // set hp back to hp max
-    // uncheck any checked boxes
 
-}
+// function longRest(){
+//     // set hp back to hp max
+//     // uncheck any checked boxes
+
+// }
