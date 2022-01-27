@@ -108,4 +108,22 @@ accent-color: var(--accent-color);
 
 th, td {
     text-align: left;
+    padding-right: 10px;
+}
+
+input[type='number'] {
+    display: inline-block;
+    width: 80px ;
+}
+
+.icon {
+    width: 20px;
+    height: auto;
+    margin: 10px;
+    /* display: inline-block; */
+    /* margin: auto; */
+}
+.flex {
+    display: flex;
+    align-items: center;
 }
