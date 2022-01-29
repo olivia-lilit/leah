@@ -147,17 +147,19 @@ function statsAndSkills() {
 }
 
 
+// Long Rest Button
 const longRestButton = document.getElementById("long-rest");
 longRestButton.addEventListener("click", longRest);
 
 function longRest(){
-    // reset and write HP
+    // reset HP to max and write
     hpCurrent = hpMax;
     for (const hpCurrentElement of hpCurrentElements){
         hpCurrentElement.textContent = hpCurrent;
     }
-
-
-    // set hp back to hp max
-    // uncheck any checked boxes
+    // uncheck all checked boxes
+    let boxes = document.querySelectorAll('input[type="checkbox"]');
+    for(box of boxes) {
+        box.checked = false;
+    }
 }
