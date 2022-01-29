@@ -12,8 +12,6 @@ function plusSigns(number) {
     }
 }
 
-
-
 // HP
     // create and write hpMax to appropriate elements
 const hpMax = 161;
@@ -29,7 +27,6 @@ const damHealField= document.querySelector('#damHeal');
 
 
 function doDamage() {
-
     let damHeal = Number(damHealField.value); // access CURRENT value of damHeal and turn it into a number
     hpCurrent += damHeal; 
         if (hpCurrent>hpMax){
@@ -43,7 +40,6 @@ function doDamage() {
             hpCurrent = 0;
             alert("Somebody give this robit some ginger cookies!");
         }
-
         damHealField.value = "";
     
     let hpCurrentElements = document.getElementsByClassName("hpCurrent");
@@ -54,12 +50,11 @@ function doDamage() {
 
 damHealButton.addEventListener('click', doDamage);
 
-// write correct hpCurrent to all elements 
+// write initial hpCurrent to all elements 
 let hpCurrentElements = document.getElementsByClassName("hpCurrent");
 for (const hpCurrentElement of hpCurrentElements){
     hpCurrentElement.textContent = hpCurrent;
 }
-
 
 
 // AC
@@ -151,15 +146,18 @@ function statsAndSkills() {
     }
 }
 
-// const longRestButton = document.querySelector('button');
-// console.log(longRestButton)
-// longRestButton.addEventListener('click', longRest);
+
+const longRestButton = document.getElementById("long-rest");
+longRestButton.addEventListener("click", longRest);
+
+function longRest(){
+    // reset and write HP
+    hpCurrent = hpMax;
+    for (const hpCurrentElement of hpCurrentElements){
+        hpCurrentElement.textContent = hpCurrent;
+    }
 
 
-
-
-// function longRest(){
-//     // set hp back to hp max
-//     // uncheck any checked boxes
-
-// }
+    // set hp back to hp max
+    // uncheck any checked boxes
+}
