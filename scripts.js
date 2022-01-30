@@ -175,8 +175,76 @@ function shortRest() {
     }
 }
 
-// const regBullet = document.querySelector('.regBullet');
+// GUNS
 
+// const regBullet = document.querySelector('.bullet.regular');
+// regBullet.addEventListener("dragstart", dragEvent);
+
+const bullets = document.querySelectorAll('.bullet');
+for (const bullet of bullets) {
+    bullet.addEventListener("dragstart", dragEvent);
+}
+
+const slots = document.querySelectorAll(".slot");
+
+function dragEvent(event) {
+
+    for (const slot of slots) {
+        slot.addEventListener("dragenter", dragEnter);
+        slot.addEventListener("dragover", dragOver);
+        slot.addEventListener("dragleave", dragLeave);
+        slot.addEventListener("drop", drop);
+    }
+
+    bulletStyle = getComputedStyle(event.currentTarget);
+    bulletColor = bulletStyle.backgroundColor;
+
+    console.log(bulletStyle.backgroundColor); 
+
+    function dragEnter(e) {
+        e.preventDefault();
+    }
+    
+    function dragOver(e) {
+        e.preventDefault();
+        e.currentTarget.style.background = bulletColor;
+    }
+    function dragLeave(e) {
+        e.currentTarget.style.background = "";
+
+    }
+    
+    function drop(e) {
+        e.currentTarget.style.background = bulletColor;
+    }
+
+
+
+}
+
+
+
+// function dragEnter(e) {
+//     e.preventDefault();
+//     console.log("hi!")
+// }
+
+// function dragOver(e) {
+//     e.preventDefault();
+//     e.currentTarget.style.background = "blue";
+//     console.log("you're here!");
+// }
+// function dragLeave(e) {
+//     console.log("bye!")
+//     e.currentTarget.style.background = "";
+
+// }
+
+// function drop(e) {
+//     console.log("yes!")
+//     e.currentTarget.style.background = "blue";
+
+// }
 
 // function dragEnd() {
 //     // decrement number value of bullets by one
@@ -185,5 +253,3 @@ function shortRest() {
 //     // change class of target to something that indicates damage for autoroller eventually
 // }
 
-// const redText = document.getElementsByClassName("abilities");
-// redText.style.color = "red";
