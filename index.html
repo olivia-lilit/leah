@@ -10,6 +10,7 @@
     <meta name="author" content="Olivia Rudd">
 </head>
 <body>
+
     <header>
         <h1>LEAH</h1>
         <h2>level 18 : level 16 <a href="http://dnd5e.wikidot.com/fighter">fighter</a> + level 2 <a href="http://116.203.203.11/dnd5e.wikidot.com/barbarian.html">barbarian</a></h2>
@@ -316,13 +317,13 @@
                         <tr>
                             <th> 7d10 superiority dice </th>
                                 <td>
-                                    <input type="checkbox">
-                                    <input type="checkbox">
-                                    <input type="checkbox">
-                                    <input type="checkbox">
-                                    <input type="checkbox">
-                                    <input type="checkbox">
-                                    <input type="checkbox">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
                                 </td>
                         </tr>
                         <tr>
@@ -388,13 +389,15 @@
             </tr>
             <tr>
                 <th>Second Wind</th>
-                <td> <input type="checkbox" name="second-wind" id="wind1"> </td>
-                <td>use BA for HP=1d10 + <span class="fighterLevel"></span> (replenishes after S/L rest)</td>
+                <td> <input type="checkbox" name="second-wind" id="wind1" class="shortRestReset"> </td>
+                <td>use BA for HP=1d10 + <span class="fighterLevel"></span>
+                </td>
             </tr>
             <tr>
                 <th>Action Surge</th>
-                <td><input type="checkbox" name="action-surge" id="action-surge"></td>
-                <td>can take one full extra action (replenishes after S/L rest)</td>
+                <td><input type="checkbox" name="action-surge" id="action-surge" class="shortRestReset"></td>
+                <td>can take one full extra action
+                </td>
             </tr>
             <tr>
                 <th>Indomitable</th>
@@ -416,8 +419,7 @@
             <tr>
                 <th>Rage</th>
                 <td> <input type="checkbox" name="rage" id="rage1"><input type="checkbox" name="rage" id="rage2"></td>
-                <td>Can go into a rage twice every long rest 
-                    rage as BA 
+                <td>Rage as BA 
                     <ul>
                         <li>adv. on str checks and saves</li>
                         <li>resist. to physical damage</li>
@@ -520,9 +522,11 @@
         </table>
 
     </div>
+<div class="buttons">
+        <button id="short-rest">Short Rest</button>
+        <button id="long-rest">Long Rest</button>
+</div>
 
-
-    <button id="long-rest">Long Rest</button>
 
     <!-- <footer>icon attribution </footer> -->
 

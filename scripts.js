@@ -163,3 +163,27 @@ function longRest(){
         box.checked = false;
     }
 }
+
+// Short Rest Button
+const shortRestButton = document.getElementById("short-rest");
+shortRestButton.addEventListener("click", shortRest)
+// uncheck all checked boxes with class shortRestReset
+function shortRest() {
+    let boxes = document.querySelectorAll('input[type="checkbox"].shortRestReset');
+    for(box of boxes) {
+        box.checked = false;
+    }
+}
+
+// const regBullet = document.querySelector('.regBullet');
+
+
+// function dragEnd() {
+//     // decrement number value of bullets by one
+//     // change color of drop target to color of bullet 
+        // need to figure out how to change CSS with JS
+//     // change class of target to something that indicates damage for autoroller eventually
+// }
+
+// const redText = document.getElementsByClassName("abilities");
+// redText.style.color = "red";
