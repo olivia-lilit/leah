@@ -193,3 +193,7 @@ div.bullet {
 .bullet.counterspell {
     background-color: rgb(154, 92, 190);
 }
+.slot > input {
+    display: inline-block;
+    width: 40px;
+}

@@ -1,6 +1,9 @@
 
 // Global constants:
 const profBonus = 6;
+const fighterLevel = 18;
+const barbarianLevel = 2;
+const totalLevel = fighterLevel + barbarianLevel;
 
 // GENERIC FUNCTIONS TO CALL IF NEEDED
 function plusSigns(number) {
@@ -12,9 +15,31 @@ function plusSigns(number) {
     }
 }
 
+// write class levels in where necessary
+    // fighter
+let fighterLevelElements = document.getElementsByClassName("fighterLevel");
+for (const fighterLevelElement of fighterLevelElements) {
+    fighterLevelElement.textContent = fighterLevel;
+}
+    // barbarian
+let barbarianLevelElements = document.getElementsByClassName("barbarianLevel");
+for (const barbarianLevelElement of barbarianLevelElements) {
+    barbarianLevelElement.textContent = barbarianLevel;
+}
+    // total
+let totalLevelElements = document.getElementsByClassName("totalLevel");
+for (const totalLevelElement of totalLevelElements) {
+    totalLevelElement.textContent = totalLevel;
+}
+
+
+
+
+
+
 // HP
     // create and write hpMax to appropriate elements
-const hpMax = 161;
+const hpMax = 170;
 let hpMaxElements = document.getElementsByClassName("hpMax");
 for (const hpMaxElement of hpMaxElements){
     hpMaxElement.textContent = hpMax;
