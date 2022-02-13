@@ -1,7 +1,7 @@
 
 // Global constants:
 const profBonus = 6;
-const fighterLevel = 16;
+const fighterLevel = 18;
 const barbarianLevel = 2;
 const totalLevel = fighterLevel + barbarianLevel;
 
@@ -39,7 +39,7 @@ for (const totalLevelElement of totalLevelElements) {
 
 // HP
     // create and write hpMax to appropriate elements
-const hpMax = 161;
+const hpMax = 170;
 let hpMaxElements = document.getElementsByClassName("hpMax");
 for (const hpMaxElement of hpMaxElements){
     hpMaxElement.textContent = hpMax;
