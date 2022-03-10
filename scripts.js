@@ -2,7 +2,7 @@
 // Global constants:
 const profBonus = 6;
 
-// GENERIC FUNCTIONS TO CALL IF NEEDED
+// GENERIC FUNCTIONS
 function plusSigns(number) {
     if (number >0) { 
        return number = "+" + number;
@@ -12,13 +12,18 @@ function plusSigns(number) {
     }
 }
 
+function writeToDom(selector,content){
+    let selectorElements = document.querySelectorAll(selector);
+    for (const selectorElement of selectorElements) {
+        selectorElement.textContent = content;
+    }
+}
+
 // HP
     // create and write hpMax to appropriate elements
 const hpMax = 161;
-let hpMaxElements = document.getElementsByClassName("hpMax");
-for (const hpMaxElement of hpMaxElements){
-    hpMaxElement.textContent = hpMax;
-}
+writeToDom(".hpMax",hpMax);
+
     // create all the components of the addition 
 let hpCurrent = hpMax; // at session start
 const damHealButton= document.getElementById("damHealSubmit");
@@ -42,19 +47,13 @@ function doDamage() {
         }
         damHealField.value = "";
     
-    let hpCurrentElements = document.getElementsByClassName("hpCurrent");
-    for (const hpCurrentElement of hpCurrentElements){
-        hpCurrentElement.textContent = hpCurrent;
-    }
+    writeToDom(".hpCurrent",hpCurrent)    
 }
 
 damHealButton.addEventListener('click', doDamage);
 
 // write initial hpCurrent to all elements 
-let hpCurrentElements = document.getElementsByClassName("hpCurrent");
-for (const hpCurrentElement of hpCurrentElements){
-    hpCurrentElement.textContent = hpCurrent;
-}
+writeToDom(".hpCurrent",hpCurrent);
 
 
 // AC
@@ -63,53 +62,40 @@ function ac() {
     let baseAc = 23;
     let shieldAc = baseAc + 4;
 // writes shieldAc to all appropriate HTML elements
-    let shieldAcElements= document.getElementsByClassName("shieldAc");
-for (const shieldAcElement of shieldAcElements) {
-    shieldAcElement.textContent = shieldAc;
-    }
+writeToDom(".shieldAc", shieldAc)
 }
 
 // PROF BONUS
-profBonusWriter();
-function profBonusWriter() {
-let profBonusElements = document.getElementsByClassName("profBonus");
-    for (const profBonusElement of profBonusElements) {
-        profBonusElement.textContent = `+${profBonus}`
-    }
-}
+writeToDom(".profBonus",`+${profBonus}`);
+
 
 // STAT SCORES, MODS, AND SAVES
 const stats = ["str", "dex", "con", "int", "wis", "cha"];
 const statScoreArray = [14, 22, 14, 11, 12, 12];
 const statSaveMultiplier = [1, 0, 1, 0, 0, 0];
 
-statsAndSkills();
-function statsAndSkills() {
-    // creates function that does math on the score to find the mod
-    function scoreToMod(number){
-        return (Math.floor((number- 10)/2));
-    }
-    // applies above function to global const statScoreArray, creating statModArray
-    const statModArray = statScoreArray.map(scoreToMod);
+// creates function that does math on the score to find the mod
+function scoreToMod(number){
+    return (Math.floor((number- 10)/2));
+}
+// maps above function to global const statScoreArray, creating statModArray
+const statModArray = statScoreArray.map(scoreToMod);
 
+writeStats();
+function writeStats(){
     for (const stat of stats) {
-        let className = `${stat}Mod`; 
         let statIndex = stats.indexOf(stat);
-        let classElements = document.getElementsByClassName(className);
-        for (classElement of classElements) {
-            classElement.textContent = plusSigns(statModArray[statIndex]);
-        }
+        writeToDom(`.${stat}Mod`, plusSigns(statModArray[statIndex]))
     }
+}
 
+writeScores();
+function writeScores(){
     for (const stat of stats){
-        let className = `${stat}Score`;
         let statIndex = stats.indexOf(stat);
-        let classElements = document.getElementsByClassName(className);
-        for (classElement of classElements) {
-            classElement.textContent = statScoreArray[statIndex];
-        }
+        writeToDom(`.${stat}Score`,statScoreArray[statIndex])
     }
-
+}
 
     //create new array of stat save values
     function modToSave(statMod) {
@@ -120,12 +106,8 @@ function statsAndSkills() {
 
     // apply stat save values to stat save elements
     for (const stat of stats) {
-        let className = `${stat}Save`; 
         let statIndex = stats.indexOf(stat);
-        let classElements = document.getElementsByClassName(className);
-        for (classElement of classElements) {
-            classElement.textContent = plusSigns(statSaveArray[statIndex]);
-        }
+        writeToDom(`.${stat}Save`, plusSigns(statSaveArray[statIndex]));
     }
 
     let skills= [["acro", "dex", 0],["anim", "wis", 1],["arca", "int", 0], ["athl", "str", 1], ["dece", "cha", 0], ["hist", "int", 0], ["insi", "wis", 0], ["inti", "cha", 1], ["inve", "int", 1], ["medi", "wis", 1], ["natu", "int", 0], ["perc", "wis", 2], ["perf", "cha", 0], ["pers", "cha", 1], ["reli", "int", 0], ["slei", "dex", 0], ["stea", "dex", 1], ["surv", "wis", 1] ];
@@ -137,14 +119,9 @@ function statsAndSkills() {
             let skillName = skill[0];
             let skillMod=  statModArray[stats.indexOf(skills[skillIndex][1])];
             skillMod += profBonus*(skills[skillIndex][2]);
-
-            let classElements = document.getElementsByClassName(`${skillName}Mod`);
-            for (classElement of classElements) {
-                classElement.textContent = plusSigns(skillMod);
-            }
+            writeToDom(`.${skillName}Mod`,plusSigns(skillMod))
         }
     }
-}
 
 
 // Long Rest Button
@@ -154,9 +131,8 @@ longRestButton.addEventListener("click", longRest);
 function longRest(){
     // reset HP to max and write
     hpCurrent = hpMax;
-    for (const hpCurrentElement of hpCurrentElements){
-        hpCurrentElement.textContent = hpCurrent;
-    }
+    writeToDom(".hpCurrent",hpCurrent);
+
     // uncheck all checked boxes
     let boxes = document.querySelectorAll('input[type="checkbox"]');
     for(box of boxes) {
