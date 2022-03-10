@@ -22,74 +22,89 @@ function writeToDom(selector,content){
     }
 }
 
-
-
 // write class levels 
 writeToDom(".fighterLevel",fighterLevel);
 writeToDom(".barbarianLevel",barbarianLevel);
 writeToDom(".totalLevel",totalLevel);
 
 // HP
- // create and write hpMax to appropriate elements
 const hpMax = 170;
-
 writeToDom(".hpMax",hpMax);
 
 // at session start
 let hpCurrent = hpMax; 
-
 // write initial hpCurrent to all elements 
 writeToDom(".hpCurrent",hpCurrent);
 
-const damHealButton= document.getElementById("damHealSubmit");
-    // access the number inside the input field
-const damHealField= document.querySelector('#damHeal');
+damage();
+function damage(){
+    const damHealButton= document.getElementById("damHealSubmit");
+    const damHealField= document.querySelector('#damHeal');
+    damHealButton.addEventListener('click', doDamage);
 
-function doDamage() {
-    let damHeal = Number(damHealField.value); // access CURRENT value of damHeal and turn it into a number
-    hpCurrent += damHeal; 
-        if (hpCurrent>hpMax){
-            hpCurrent = hpMax;
-        }
-        if(hpCurrent< (-(hpMax/2))){
-            hpCurrent = 0;
-            alert("Mariah would be so disappointed")
-        }
-        else if (hpCurrent<0) {
-            hpCurrent = 0;
-            alert("Somebody give this robit some ginger cookies!");
-        }
-        damHealField.value = "";
-    
-    writeToDom(".hpCurrent",hpCurrent)    
+    function doDamage() {
+        let damHeal = Number(damHealField.value); // access CURRENT value of damHeal and turn it into a number
+        hpCurrent += damHeal; 
+            if (hpCurrent>hpMax){
+                hpCurrent = hpMax;
+            }
+            if(hpCurrent< (-(hpMax/2))){
+                hpCurrent = 0;
+                alert("Mariah would be so disappointed")
+            }
+            else if (hpCurrent<0) {
+                hpCurrent = 0;
+                alert("Somebody give this robit some ginger cookies!");
+            }
+            damHealField.value = "";
+        
+        writeToDom(".hpCurrent",hpCurrent)    
+    }
 }
 
-damHealButton.addEventListener('click', doDamage);
 
 // AC
 ac();
 function ac() {
     let baseAc = 23;
     let shieldAc = baseAc + 4;
-// writes shieldAc to all appropriate HTML elements
 writeToDom(".shieldAc", shieldAc)
 }
 
 // PROF BONUS
 writeToDom(".profBonus",`+${profBonus}`);
 
-
 // STAT SCORES, MODS, AND SAVES
 const stats = ["str", "dex", "con", "int", "wis", "cha"];
 const statScoreArray = [14, 22, 14, 11, 12, 12];
+const statModArray = statScoreArray.map(scoreToMod);
 const statSaveMultiplier = [1, 0, 1, 0, 0, 0];
+const statSaveArray = statModArray.map(modToSave);
+// [skill, base stat, prof multiplier]:
+const skills= [
+    ["acro", "dex", 0],
+    ["anim", "wis", 1],
+    ["arca", "int", 0],
+    ["athl", "str", 1],
+    ["dece", "cha", 0],
+    ["hist", "int", 0],
+    ["insi", "wis", 0],
+    ["inti", "cha", 1],
+    ["inve", "int", 1], 
+    ["medi", "wis", 1], 
+    ["natu", "int", 0], 
+    ["perc", "wis", 2], 
+    ["perf", "cha", 0], 
+    ["pers", "cha", 1], 
+    ["reli", "int", 0], 
+    ["slei", "dex", 0], 
+    ["stea", "dex", 1], 
+    ["surv", "wis", 1] 
+];
 
-// creates function that does math on the score to find the mod
 function scoreToMod(number){
     return (Math.floor((number- 10)/2));
 }
-// maps above function to global const statScoreArray, creating statModArray
-const statModArray = statScoreArray.map(scoreToMod);
 
 writeStats();
 function writeStats(){
@@ -111,16 +126,11 @@ function writeScores(){
     function modToSave(statMod) {
         return statMod + (profBonus * (statSaveMultiplier[statModArray.indexOf(statMod)]));
     }
-     
-    const statSaveArray = statModArray.map(modToSave);
-
     // apply stat save values to stat save elements
     for (const stat of stats) {
         let statIndex = stats.indexOf(stat);
         writeToDom(`.${stat}Save`, plusSigns(statSaveArray[statIndex]));
     }
-
-    let skills= [["acro", "dex", 0],["anim", "wis", 1],["arca", "int", 0], ["athl", "str", 1], ["dece", "cha", 0], ["hist", "int", 0], ["insi", "wis", 0], ["inti", "cha", 1], ["inve", "int", 1], ["medi", "wis", 1], ["natu", "int", 0], ["perc", "wis", 2], ["perf", "cha", 0], ["pers", "cha", 1], ["reli", "int", 0], ["slei", "dex", 0], ["stea", "dex", 1], ["surv", "wis", 1] ];
 
     skillMods();
     function skillMods (){
