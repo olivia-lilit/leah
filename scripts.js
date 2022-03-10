@@ -64,12 +64,30 @@ function damage(){
 
 
 // AC
+const shieldToggle = document.querySelector("#shieldToggle");
+shieldToggle.addEventListener("change", ac)
+
 ac();
 function ac() {
     let baseAc = 23;
     let shieldAc = baseAc + 4;
+    let shieldStuff = document.querySelector("#shield");
+
+    if (shieldToggle.checked === true) {
+        writeToDom(".Ac", shieldAc);
+        shieldStuff.style.color = "#000";
+
+    }
+    else {
+        writeToDom(".Ac",baseAc);
+        shieldStuff.style.color = "#bbb";
+    }
+
 writeToDom(".shieldAc", shieldAc)
 }
+
+
+
 
 // PROF BONUS
 writeToDom(".profBonus",`+${profBonus}`);
