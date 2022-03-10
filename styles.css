@@ -131,3 +131,69 @@ input[type='number'] {
     display: flex;
     align-items: center;
 }
+
+#buttons {
+    display: flex;
+}
+
+div.slot {
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-block;
+}
+.bullet.regular {
+    background-color: rgba(137, 166, 245, 0.582);
+}
+
+.blue-background {
+    background-color: blue;
+}
+.drag-over {
+    border: dashed 3px red;
+}
+div.bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.bullet.regular {
+    background-color: gainsboro;
+}
+
+.bullet.powder {
+    background-color: rgb(212, 0, 0);
+}
+
+.bullet.stopping {
+    background-color: rgb(229, 218, 255);
+}
+
+.bullet.clockwork {
+    background-color: rgb(212, 191, 2);
+}
+
+.bullet.fireball {
+    background-color: rgb(255, 136, 0);
+}
+
+.bullet.fogCloud {
+    background-color: rgb(182, 211, 255);
+}
+
+.bullet.shatter {
+    background-color: rgb(122, 160, 35);
+}
+
+.bullet.dispelMagic {
+    background-color: rgb(178, 230, 236);
+}
+.bullet.counterspell {
+    background-color: rgb(154, 92, 190);
+}
+.slot > input {
+    display: inline-block;
+    width: 40px;
+}

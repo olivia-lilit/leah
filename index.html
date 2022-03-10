@@ -10,9 +10,10 @@
     <meta name="author" content="Olivia Rudd">
 </head>
 <body>
+
     <header>
         <h1>LEAH</h1>
-        <h2>level 18 : level 16 <a href="http://dnd5e.wikidot.com/fighter">fighter</a> + level 2 <a href="http://116.203.203.11/dnd5e.wikidot.com/barbarian.html">barbarian</a></h2>
+        <h2>level <span class="totalLevel"></span> : level <span class="fighterLevel"></span> <a href="http://dnd5e.wikidot.com/fighter">fighter</a> + level <span class="barbarianLevel"></span> <a href="http://116.203.203.11/dnd5e.wikidot.com/barbarian.html">barbarian</a></h2>
     </header>
 
     <table id="health-stats">
@@ -44,7 +45,10 @@
             <td class="profBonus"></td>
             <td class="initBonus">+6</td>
             <td>Successes:<input type="checkbox" name="death-saves" id="death-save1"><input type="checkbox" name="death-saves" id="death-save2"><input type="checkbox" name="death-saves" id="death-save3"></td>
-            <td class="fighterHitDice">16d10 <input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""></td>
+            <td class="fighterHitDice">16d10 <input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id=""><input type="checkbox" name="" id="">
+            <input type="checkbox" name="" id="">
+            <input type="checkbox" name="" id="">
+            </td>
         </tr>
         <tr>
             <td class="baseAc"></td>
@@ -199,23 +203,23 @@
                         <td>+15</td>
                     </tr>
                     <tr>
-                        <td>
-                            <input class="bullet" type="text">
-                            <input class="bullet" type="text">
-                            <input class="bullet" type="text">
-                            <input class="bullet" type="text">
-                            <input class="bullet" type="text">
-                            <input class="bullet" type="text">
+                        <td class "ammo">
+                            <div class="slot brute gun"><input type="text" name="" id=""></div>
+                            <div class="slot brute gun"><input type="text" name="" id=""></div>
+                            <div class="slot brute gun"><input type="text" name="" id=""></div>
+                            <div class="slot brute gun"><input type="text" name="" id=""></div>
+                            <div class="slot brute gun"><input type="text" name="" id=""></div>
+                            <div class="slot brute gun"><input type="text" name="" id=""></div>
+                        </td>
+                        <td class "ammo">
+                            <div class="slot magical gun"><input type="text" name="" id=""></div>
+                            <div class="slot magical gun"><input type="text" name="" id=""></div>
+                            <div class="slot magical gun"><input type="text" name="" id=""></div>
+                            <div class="slot magical gun"><input type="text" name="" id=""></div>
+                            <div class="slot magical gun"><input type="text" name="" id=""></div>
+                            <div class="slot magical gun"><input type="text" name="" id=""></div>
                         </td>
 
-                        <td>
-                            <input class="bullet" type="text">
-                            <input class="bullet" type="text">
-                            <input class="bullet" type="text">
-                            <input class="bullet" type="text">
-                            <input class="bullet" type="text">
-                            <input class="bullet" type="text">
-                        </td>
                     </tr>
 
                 </table>
@@ -223,51 +227,79 @@
                 <table id="bullets">
                     <tr>
                         <th>#</th>
+                        <th></th>
                         <th>type</th>
                         <th>damage</th>
                     </tr>
                     <tr>
                         <td><input type="number"></td>
+                        <td>
+                            <div class="icon bullet regular" draggable="true"></div>
+                        </td>
                         <td>regular</td>
                         <td>1d10(40) or 1d6(120</td>
                     </tr>
                     <tr>
                         <td><input type="number"></td>
+                        <td>
+                            <div class="icon bullet powder" draggable="true"></div>
+                        </td>
                         <td>powder</td>
                         <td>regular + 8</td>
                     </tr>
                     <tr>
                         <td><input type="number"></td>
+                        <td>
+                            <div class="icon bullet stopping" draggable="true"></div>
+                        </td>
                         <td>stopping</td>
                         <td>regular + target loses movement</td>
                     </tr>
                     <tr>
                         <td><input type="number"></td>
+                        <td>
+                            <div class="icon bullet clockwork" draggable="true"></div>
+                        </td>
                         <td>clockwork</td>
                         <td>regular + target must use reaction or take 4d12 damage</td>
                     </tr>
                     <tr>
                         <td><input type="number"></td>
+                        <td>
+                            <div class="icon bullet fireball" draggable="true"></div>
+                        </td>
                         <td>fireball</td>
                         <td>20ft radius sphere, dex save to halve 8d6 fire damage</td>
                     </tr>
                     <tr>
                         <td><input type="number"></td>
+                        <td>
+                            <div class="icon bullet fogCloud" draggable="true"></div>
+                        </td>
                         <td>fog cloud</td>
                         <td>20 radius sphere of opaque fog I can see through</td>
                     </tr>
                     <tr>
                         <td><input type="number"></td>
+                        <td>
+                            <div class="icon bullet shatter" draggable="true"></div>
+                        </td>
                         <td>shatter</td>
                         <td>10 radius sphere noise,con save to halve 3d8 thunder damage</td>
                     </tr>
                     <tr>
                         <td><input type="number"></td>
+                        <td>
+                            <div class="icon bullet dispelMagic" draggable="true"></div>
+                        </td>
                         <td>dispel magic</td>
                         <td>any spell of 3rd level or lower ends</td>
                     </tr>
                     <tr>
                         <td><input type="number"></td>
+                        <td>
+                            <div class="icon bullet counterspell" draggable="true"></div>
+                        </td>
                         <td>counterspell</td>
                         <td>as reaction, a creature fails to complete their casting of a 3rd level spell or lower</td>
                     </tr>
@@ -314,15 +346,15 @@
                             <th colspan="2">Maneuvers</th>
                         </tr>
                         <tr>
-                            <th> 7d10 superiority dice </th>
+                            <th> 7d12 superiority dice </th>
                                 <td>
-                                    <input type="checkbox">
-                                    <input type="checkbox">
-                                    <input type="checkbox">
-                                    <input type="checkbox">
-                                    <input type="checkbox">
-                                    <input type="checkbox">
-                                    <input type="checkbox">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
+                                    <input type="checkbox" class= "shortRestReset">
                                 </td>
                         </tr>
                         <tr>
@@ -388,18 +420,24 @@
             </tr>
             <tr>
                 <th>Second Wind</th>
-                <td> <input type="checkbox" name="second-wind" id="wind1"> </td>
-                <td>use BA for HP=1d10 + <span class="fighterLevel"></span> (replenishes after S/L rest)</td>
+                <td> <input type="checkbox" name="second-wind" id="wind1" class="shortRestReset"> </td>
+                <td>use BA for HP=1d10 + <span class="fighterLevel"></span>
+                </td>
             </tr>
             <tr>
                 <th>Action Surge</th>
-                <td><input type="checkbox" name="action-surge" id="action-surge"></td>
-                <td>can take one full extra action (replenishes after S/L rest)</td>
+                <td><input type="checkbox" name="action-surge" id="action-surge" class="shortRestReset">
+                <input type="checkbox" name="action-surge" id="action-surge" class="shortRestReset"></td>
+                <td>can take one full extra action
+                </td>
             </tr>
             <tr>
                 <th>Indomitable</th>
                 <td> 
-                    <input type="checkbox" name="indomitable" id="indomitable1"> <input type="checkbox" name="indomitable" id="indomitable2">
+                    <input type="checkbox" name="indomitable" id="indomitable1"> 
+                    <input type="checkbox" name="indomitable" id="indomitable2">
+                    <input type="checkbox" name="indomitable" id="indomitable3">
+                    
                 </td>
                 <td>reroll failed saving throw </td>
             </tr>
@@ -416,8 +454,7 @@
             <tr>
                 <th>Rage</th>
                 <td> <input type="checkbox" name="rage" id="rage1"><input type="checkbox" name="rage" id="rage2"></td>
-                <td>Can go into a rage twice every long rest 
-                    rage as BA 
+                <td>Rage as BA 
                     <ul>
                         <li>adv. on str checks and saves</li>
                         <li>resist. to physical damage</li>
@@ -503,7 +540,7 @@
             </tr>
             <tr>
                 <td>teleporting lode stones</td>
-                <td>I have one, Hubert has the other</td>
+                <td>I have one, Carella has the other</td>
             </tr>
             <tr>
                 <td>thieves' tools</td>
@@ -520,9 +557,11 @@
         </table>
 
     </div>
+<div class="buttons">
+        <button id="short-rest">Short Rest</button>
+        <button id="long-rest">Long Rest</button>
+</div>
 
-
-    <button id="long-rest">Long Rest</button>
 
     <!-- <footer>icon attribution </footer> -->
 
