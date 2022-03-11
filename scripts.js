@@ -188,49 +188,73 @@ function shortRest() {
 }
 
 // GUNS
-
-// const regBullet = document.querySelector('.bullet.regular');
-// regBullet.addEventListener("dragstart", dragEvent);
-
+// ideally refactor this to have less global variables at some point, but when all drag functions were sub-functions of the dragevent function, the drop function was running repeatedly, adding multiple types to each slot when 
 const bullets = document.querySelectorAll('.bullet');
 for (const bullet of bullets) {
     bullet.addEventListener("dragstart", dragEvent);
 }
 
 const slots = document.querySelectorAll(".slot");
+for (const slot of slots) {
+    slot.addEventListener("dragenter", dragEnter);
+    slot.addEventListener("dragover", dragOver);
+    slot.addEventListener("dragleave", dragLeave);
+    slot.addEventListener("drop", drop);
+}
+let bulletClasses;
+let bulletType;
+let bulletStyle;
+let bulletColor;
+let previousTargetColor;
 
-function dragEvent(event) {
-    for (const slot of slots) {
-        slot.addEventListener("dragenter", dragEnter);
-        slot.addEventListener("dragover", dragOver);
-        slot.addEventListener("dragleave", dragLeave);
-        slot.addEventListener("drop", drop);
-    }
-
-    bulletStyle = getComputedStyle(event.currentTarget);
+function dragEvent(bulletEvent) {
+    console.log("new drag event")
+    bulletClasses = bulletEvent.target.classList;
+    bulletType = bulletClasses[2];
+    console.log(bulletType)
+    bulletStyle = getComputedStyle(bulletEvent.target);
     bulletColor = bulletStyle.backgroundColor;
+}
 
-    let previousTargetColor;
+function dragEnter(slotEvent) {
+    slotEvent.preventDefault();
+    previousTargetColor = slotEvent.target.style.backgroundColor;
+}
 
-    // for some reason, this runs three times every time you drag it onto the target - something to do with it being a div/ border???
-    function dragEnter(e) {
-        e.preventDefault();
-        previousTargetColor = e.currentTarget.style.backgroundColor;
-        console.log(previousTargetColor)
-    }
-    
-    function dragOver(e) {
-        e.preventDefault();
-        e.currentTarget.style.background = bulletColor;
-    }
-    function dragLeave(e) {
-        e.preventDefault();
-        e.currentTarget.style.background = previousTargetColor;
-    }
-    
-    function drop(e) {
-        e.preventDefault();
-        e.currentTarget.style.background = bulletColor;
-    }
+function dragOver(slotEvent) {
+    slotEvent.preventDefault();
+    slotEvent.target.style.backgroundColor = bulletColor;
+}
+function dragLeave(slotEvent) {
+    slotEvent.preventDefault();
+    slotEvent.target.style.backgroundColor = previousTargetColor;
+}
 
+function drop(slotEvent) {
+    slotEvent.preventDefault();
+    let slotType =  slotEvent.target.classList[3];
+    slotEvent.target.classList.remove(slotType);
+    slotEvent.target.classList.add(`${bulletType}`);
+    console.log(`current classlist : ${slotEvent.target.classList}`)
+
+    decrementBullets(bulletType);
+
+    slotEvent.target.addEventListener("click", shoot)
+}
+
+function decrementBullets(bulletType) {
+    const input = document.querySelector(`#${bulletType}BulletCount`);
+    input.value = input.value-1;
+}
+
+function shoot(slotEvent){
+    let slotType =  slotEvent.target.classList[3];
+    slotEvent.target.classList.remove(slotType);
+    let bulletDamage = document.querySelector(`#${slotType}Damage`);
+    slotEvent.target.style.backgroundColor = "black";
+    bulletDamage.style.backgroundColor = "rgba(166, 185, 247,0.5)";
+    setTimeout(function() {
+    bulletDamage.style.backgroundColor = "white";
+    },5000)
+    slotEvent.target.style.backgroundColor = "black";
 }

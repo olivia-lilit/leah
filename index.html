@@ -204,20 +204,20 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class="slot brute gun"><input type="text" name="" id=""></div>
-                            <div class="slot brute gun"><input type="text" name="" id=""></div>
-                            <div class="slot brute gun"><input type="text" name="" id=""></div>
-                            <div class="slot brute gun"><input type="text" name="" id=""></div>
-                            <div class="slot brute gun"><input type="text" name="" id=""></div>
-                            <div class="slot brute gun"><input type="text" name="" id=""></div>
+                            <div class="slot brute gun"></div>
+                            <div class="slot brute gun"></div>
+                            <div class="slot brute gun"></div>
+                            <div class="slot brute gun"></div>
+                            <div class="slot brute gun"></div>
+                            <div class="slot brute gun"></div>
                         </td>
                         <td>
-                            <div class="slot magical gun"><input type="text" name="" id=""></div>
-                            <div class="slot magical gun"><input type="text" name="" id=""></div>
-                            <div class="slot magical gun"><input type="text" name="" id=""></div>
-                            <div class="slot magical gun"><input type="text" name="" id=""></div>
-                            <div class="slot magical gun"><input type="text" name="" id=""></div>
-                            <div class="slot magical gun"><input type="text" name="" id=""></div>
+                            <div class="slot magical gun"></div>
+                            <div class="slot magical gun"></div>
+                            <div class="slot magical gun"></div>
+                            <div class="slot magical gun"></div>
+                            <div class="slot magical gun"></div>
+                            <div class="slot magical gun"></div>
                         </td>
 
                     </tr>
@@ -232,76 +232,76 @@
                         <th>damage</th>
                     </tr>
                     <tr>
-                        <td><input type="number"></td>
+                        <td><input type="number" id="regularBulletCount"></td>
                         <td>
                             <div class="icon bullet regular" draggable="true"></div>
                         </td>
                         <td>regular</td>
-                        <td>1d10(40) or 1d6(120</td>
+                        <td id="regularDamage">1d10(40) or 1d6(120)</td>
                     </tr>
                     <tr>
-                        <td><input type="number"></td>
+                        <td><input type="number" id="powderBulletCount"></td>
                         <td>
                             <div class="icon bullet powder" draggable="true"></div>
                         </td>
                         <td>powder</td>
-                        <td>regular + 8</td>
+                        <td id="powderDamage">regular + 8</td>
                     </tr>
                     <tr>
-                        <td><input type="number"></td>
+                        <td><input type="number" id="stoppingBulletCount"></td>
                         <td>
                             <div class="icon bullet stopping" draggable="true"></div>
                         </td>
                         <td>stopping</td>
-                        <td>regular + target loses movement</td>
+                        <td id="stoppingDamage">regular + target loses movement</td>
                     </tr>
                     <tr>
-                        <td><input type="number"></td>
+                        <td><input type="number" id="clockworkBulletCount"></td>
                         <td>
                             <div class="icon bullet clockwork" draggable="true"></div>
                         </td>
                         <td>clockwork</td>
-                        <td>regular + target must use reaction or take 4d12 damage</td>
+                        <td id="clockworkDamage">regular + target must use reaction or take 4d12 damage</td>
                     </tr>
                     <tr>
-                        <td><input type="number"></td>
+                        <td><input type="number" id="fireballBulletCount"></td>
                         <td>
                             <div class="icon bullet fireball" draggable="true"></div>
                         </td>
                         <td>fireball</td>
-                        <td>20ft radius sphere, dex save to halve 8d6 fire damage</td>
+                        <td id="fireballDamage">20ft radius sphere, dex save to halve 8d6 fire damage</td>
                     </tr>
                     <tr>
-                        <td><input type="number"></td>
+                        <td><input type="number" id="fogCloudBulletCount"></td>
                         <td>
                             <div class="icon bullet fogCloud" draggable="true"></div>
                         </td>
                         <td>fog cloud</td>
-                        <td>20 radius sphere of opaque fog I can see through</td>
+                        <td id="fogCloudDamage">20 radius sphere of opaque fog I can see through</td>
                     </tr>
                     <tr>
-                        <td><input type="number"></td>
+                        <td><input type="number" id="shatterBulletCount"></td>
                         <td>
                             <div class="icon bullet shatter" draggable="true"></div>
                         </td>
                         <td>shatter</td>
-                        <td>10 radius sphere noise,con save to halve 3d8 thunder damage</td>
+                        <td id="shatterDamage">10 radius sphere noise,con save to halve 3d8 thunder damage</td>
                     </tr>
                     <tr>
-                        <td><input type="number"></td>
+                        <td><input type="number" id="dispelMagicBulletCount"></td>
                         <td>
                             <div class="icon bullet dispelMagic" draggable="true"></div>
                         </td>
                         <td>dispel magic</td>
-                        <td>any spell of 3rd level or lower ends</td>
+                        <td id="id="dispelMagicDamage"">any spell of 3rd level or lower ends</td>
                     </tr>
                     <tr>
-                        <td><input type="number"></td>
+                        <td><input type="number" id="counterspellBulletCount"></td>
                         <td>
                             <div class="icon bullet counterspell" draggable="true"></div>
                         </td>
                         <td>counterspell</td>
-                        <td>as reaction, a creature fails to complete their casting of a 3rd level spell or lower</td>
+                        <td id="counterspellDamage">as reaction, a creature fails to complete their casting of a 3rd level spell or lower</td>
                     </tr>
                     <tr>
                         <td></td>
