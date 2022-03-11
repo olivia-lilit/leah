@@ -87,8 +87,6 @@ writeToDom(".shieldAc", shieldAc)
 }
 
 
-
-
 // PROF BONUS
 writeToDom(".profBonus",`+${profBonus}`);
 
@@ -202,7 +200,6 @@ for (const bullet of bullets) {
 const slots = document.querySelectorAll(".slot");
 
 function dragEvent(event) {
-
     for (const slot of slots) {
         slot.addEventListener("dragenter", dragEnter);
         slot.addEventListener("dragover", dragOver);
@@ -213,10 +210,13 @@ function dragEvent(event) {
     bulletStyle = getComputedStyle(event.currentTarget);
     bulletColor = bulletStyle.backgroundColor;
 
-    console.log(bulletStyle.backgroundColor); 
+    let previousTargetColor;
 
+    // for some reason, this runs three times every time you drag it onto the target - something to do with it being a div/ border???
     function dragEnter(e) {
         e.preventDefault();
+        previousTargetColor = e.currentTarget.style.backgroundColor;
+        console.log(previousTargetColor)
     }
     
     function dragOver(e) {
@@ -224,45 +224,13 @@ function dragEvent(event) {
         e.currentTarget.style.background = bulletColor;
     }
     function dragLeave(e) {
-        e.currentTarget.style.background = "";
-
+        e.preventDefault();
+        e.currentTarget.style.background = previousTargetColor;
     }
     
     function drop(e) {
+        e.preventDefault();
         e.currentTarget.style.background = bulletColor;
     }
 
-
-
 }
-
-
-
-// function dragEnter(e) {
-//     e.preventDefault();
-//     console.log("hi!")
-// }
-
-// function dragOver(e) {
-//     e.preventDefault();
-//     e.currentTarget.style.background = "blue";
-//     console.log("you're here!");
-// }
-// function dragLeave(e) {
-//     console.log("bye!")
-//     e.currentTarget.style.background = "";
-
-// }
-
-// function drop(e) {
-//     console.log("yes!")
-//     e.currentTarget.style.background = "blue";
-
-// }
-
-// function dragEnd() {
-//     // decrement number value of bullets by one
-//     // change color of drop target to color of bullet 
-        // need to figure out how to change CSS with JS
-//     // change class of target to something that indicates damage for autoroller eventually
-// }
