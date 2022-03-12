@@ -17,6 +17,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 header {
@@ -127,8 +128,18 @@ input[type='number'] {
     align-items: center;
 }
 
-#buttons {
+div.buttons {
     display: flex;
+    flex-direction: row;
+    width: 80%;
+    border: 2px solid black;
+    margin: 10px;
+    padding: .5rem;
+    justify-content: space-evenly;
+}
+
+.buttons>div {
+    width: 10%;
 }
 
 div.slot {
@@ -138,16 +149,7 @@ div.slot {
     border-radius: 50%;
     display: inline-block;
 }
-.bullet.regular {
-    background-color: rgba(137, 166, 245, 0.582);
-}
 
-.blue-background {
-    background-color: blue;
-}
-.drag-over {
-    border: dashed 3px red;
-}
 div.bullet {
     width: 20px;
     height: 20px;
