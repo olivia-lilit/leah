@@ -4,8 +4,12 @@ const profBonus = 6;
 const fighterLevel = 18;
 const barbarianLevel = 2;
 const totalLevel = fighterLevel + barbarianLevel;
+const hpMax = 170;
+const baseAc = 23;
+const statScoreArray = [14, 22, 14, 11, 12, 12];
 
-// GENERIC FUNCTIONS
+
+// Generic functions
 function plusSigns(number) {
     if (number >0) { 
        return number = "+" + number;
@@ -17,9 +21,12 @@ function plusSigns(number) {
 
 function writeToDom(selector,content){
     let selectorElements = document.querySelectorAll(selector);
+     // finds all elements that have the relevant selector
     for (const selectorElement of selectorElements) {
         selectorElement.textContent = content;
-    }
+    } 
+    // goes over that list, replacing the content of every element with the content given the function
+
 }
 
 // write class levels 
@@ -28,7 +35,6 @@ writeToDom(".barbarianLevel",barbarianLevel);
 writeToDom(".totalLevel",totalLevel);
 
 // HP
-const hpMax = 170;
 writeToDom(".hpMax",hpMax);
 
 // at session start
@@ -38,7 +44,7 @@ writeToDom(".hpCurrent",hpCurrent);
 
 damage();
 function damage(){
-    const damHealButton= document.getElementById("damHealSubmit");
+    const damHealButton= document.getElementById("damHealSubmit"); 
     const damHealField= document.querySelector('#damHeal');
     damHealButton.addEventListener('click', doDamage);
 
@@ -51,12 +57,12 @@ function damage(){
             if(hpCurrent< (-(hpMax/2))){
                 hpCurrent = 0;
                 alert("Mariah would be so disappointed")
-            }
+            } 
             else if (hpCurrent<0) {
                 hpCurrent = 0;
                 alert("Somebody give this robit some ginger cookies!");
             }
-            damHealField.value = "";
+            damHealField.value = ""; // empties the field
         
         writeToDom(".hpCurrent",hpCurrent)    
     }
@@ -69,7 +75,6 @@ shieldToggle.addEventListener("change", ac)
 
 ac();
 function ac() {
-    let baseAc = 23;
     let shieldAc = baseAc + 4;
     let shieldStuff = document.querySelector("#shield");
 
@@ -92,11 +97,11 @@ writeToDom(".profBonus",`+${profBonus}`);
 
 // STAT SCORES, MODS, AND SAVES
 const stats = ["str", "dex", "con", "int", "wis", "cha"];
-const statScoreArray = [14, 22, 14, 11, 12, 12];
 const statModArray = statScoreArray.map(scoreToMod);
+// creates an array of stat modifiers by mapping the scoreToMod function on the statScoreArray
 const statSaveMultiplier = [1, 0, 1, 0, 0, 0];
+// in stat order, the number of times the proficiency bonus can be added
 const statSaveArray = statModArray.map(modToSave);
-// [skill, base stat, prof multiplier]:
 const skills= [
     ["acro", "dex", 0],
     ["anim", "wis", 1],
@@ -116,6 +121,8 @@ const skills= [
     ["slei", "dex", 0], 
     ["stea", "dex", 1], 
     ["surv", "wis", 1] 
+    // [skill, base stat, prof multiplier]:
+
 ];
 
 function scoreToMod(number){
@@ -153,6 +160,7 @@ function writeScores(){
         for (skill of skills){
             let skillIndex = skills.indexOf(skill);
             let skillName = skill[0];
+            // accesses the first element of the sub-array for that skill, which is it's 4-letter name
             let skillMod=  statModArray[stats.indexOf(skills[skillIndex][1])];
             skillMod += profBonus*(skills[skillIndex][2]);
             writeToDom(`.${skillName}Mod`,plusSigns(skillMod))
@@ -163,6 +171,7 @@ function writeScores(){
 // Long Rest Button
 const longRestButton = document.getElementById("long-rest");
 longRestButton.addEventListener("click", longRest);
+// upon clicking the longRestButton, runs the longRest function
 
 function longRest(){
     // reset HP to max and write
@@ -187,11 +196,13 @@ function shortRest() {
     }
 }
 
-// GUNS
-// ideally refactor this to have less global variables at some point, but when all drag functions were sub-functions of the dragevent function, the drop function was running repeatedly, adding multiple types to each slot when 
+// Guns
+// ideally refactor this to have fewer global variables at some point, but when all drag functions were sub-functions of the dragevent function, the drop function was running repeatedly, adding multiple types to each slot when 
 const bullets = document.querySelectorAll('.bullet');
+// the bullets listed, small colored circles
 for (const bullet of bullets) {
     bullet.addEventListener("dragstart", dragEvent);
+    // runs dragEvent when they are dragged
 }
 
 const slots = document.querySelectorAll(".slot");
